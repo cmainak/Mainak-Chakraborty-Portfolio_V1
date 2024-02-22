@@ -13,6 +13,17 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
 
+    
+    <script>
+        function showPasswordPrompt(url) {
+            var password = prompt("Please enter the password to view the project:", "");
+            if (password === "0406") {
+                window.open(url);
+            } else {
+                alert("Incorrect password.");
+            }
+        }
+    </script>
 </head>
 <body>
     
@@ -48,7 +59,9 @@
                 <h3>Main Space Design</h3>
                 <p>Personal Brand Case Study</p>
                 <p>Welcome to Main Space Designs! As a designer, I believe that good design is about more than just aesthetics - it's about creating experiences that are intuitive, engaging, and meaningful.</p>
-                <a href="https://www.behance.net/gallery/168845977/Main-Space-Designs" class="btn"> View Project <i class="fas fa-link"></i> </a>
+                <button onclick="showPasswordPrompt('https://www.behance.net/gallery/168845977/Main-Space-Designs')" class="btn"> View Project <i class="fas fa-link"></i> </button>
+            </div>
+        </div>
             </div>
         </div>
 

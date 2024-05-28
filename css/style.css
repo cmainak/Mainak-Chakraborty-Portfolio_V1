@@ -451,7 +451,7 @@ section {
   text-align: center;
   padding: 2rem;
   border-radius: .5rem;
-  background: #191919;
+  background: #fff;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
 }

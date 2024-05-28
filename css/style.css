@@ -483,7 +483,7 @@ section {
   border-radius: .5rem;
   padding: 1.5rem;
   display: inline-block;
-  background: #FFF8DD;
+  background: lightgray;
 }
 
 .trending .box-container .box .content .icons a {

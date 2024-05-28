@@ -24,7 +24,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #631dd3;
+  background: #E00400;
   border-radius: 80px;
 }
 
@@ -47,14 +47,14 @@ section {
 
 .heading span {
   text-transform: uppercase;
-  color: #631dd3;
+  color: #E00400;
 }
 
 .btn {
   display: inline-block;
   margin-top: 1rem;
   border-radius: 5rem;
-  background: #631dd3;
+  background: #E00400;
   padding: .7rem;
   font-size: 1.7rem;
   color: #fff;
@@ -68,7 +68,7 @@ section {
   font-size: 1.7rem;
   text-align: center;
   background: #fff;
-  color: #631dd3;
+  color: #E00400;
   border-radius: 50%;
   margin-left: 1rem;
   -webkit-transition: .2s linear;

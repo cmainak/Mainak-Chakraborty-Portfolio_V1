@@ -608,10 +608,10 @@ section {
   border-radius: 5rem;
   padding: 1.2rem 1.8rem;
   font-size: 1.6rem;
-  color: #fff;
+  color: #191919;
   text-transform: none;
   margin: .7rem 0;
-  background: #191919;
+  background: #fff;
 }
 
 .contact .row form textarea {

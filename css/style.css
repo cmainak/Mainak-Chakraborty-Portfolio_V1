@@ -493,7 +493,7 @@ section {
 }
 
 .trending .box-container .box .content .icons a:hover {
-  color: lightgray;
+  color: #000000;
 }
 
 .trending .box-container .box .content .icons a i {

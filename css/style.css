@@ -483,7 +483,7 @@ section {
   border-radius: .5rem;
   padding: 1.5rem;
   display: inline-block;
-  background: #191919;
+  background: #E00400;
 }
 
 .trending .box-container .box .content .icons a {
@@ -498,7 +498,7 @@ section {
 
 .trending .box-container .box .content .icons a i {
   padding-right: .5rem;
-  color: #E00400;
+  color: #fff;
 }
 
 .trending .box-container .box .content h3 {

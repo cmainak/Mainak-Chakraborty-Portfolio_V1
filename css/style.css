@@ -274,6 +274,7 @@ section {
   grid-gap: 1rem;
   max-width: 100%;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .photo-grid-item {

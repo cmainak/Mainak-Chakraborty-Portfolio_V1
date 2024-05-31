@@ -711,10 +711,13 @@ section {
 .footer{
 	background-color: #F2F2F2;
     padding: 70px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .footer-col{
-   width: 25%;
-   padding: 0 15px;
+  width: 25%;
+  padding: 0 15px;
 }
 .footer-col h4{
 	font-size: 18px;
@@ -723,6 +726,7 @@ section {
 	margin-bottom: 35px;
 	font-weight: 500;
 	position: relative;
+  text-align: center;
 }
 .footer-col h4::before{
 	content: '';
@@ -736,6 +740,8 @@ section {
 }
 .footer-col ul li:not(:last-child){
 	margin-bottom: 10px;
+  text-align: center;
+  margin-right: 2rem;
 }
 .footer-col ul li a{
 	font-size: 16px;

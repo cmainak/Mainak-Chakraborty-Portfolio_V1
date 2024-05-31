@@ -671,13 +671,19 @@ section {
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Adjust based on your design */
+    flex-wrap: wrap;     
 }
+
+.footer-section {
+  flex: 1;               /* Ensures each section takes equal space */
+  padding: 10px;         /* Adjust as needed for spacing */
+  min-width: 200px;      /* Ensures sections don't shrink too small */
+  box-sizing: border-box; /* Includes padding in width calculation */
 
 .footer-row {
   display: flex;

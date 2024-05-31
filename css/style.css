@@ -715,6 +715,9 @@ section {
     justify-content: space-between;
     align-items: flex-start;
 }
+.container {
+  display: flex !important;
+}
 .footer-col{
   width: 25%;
   padding: 0 15px;

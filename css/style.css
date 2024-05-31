@@ -768,11 +768,6 @@ section {
 	background-color: #E00400;
 }
 
-@media (max-width: 450px) {
-  html {
-    font-size: 50%;
-  }
-}
 /*responsive*/
 @media(max-width: 767px){
   .footer-col{
@@ -785,6 +780,13 @@ section {
     width: 100%;
 }
 }
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 
 
 

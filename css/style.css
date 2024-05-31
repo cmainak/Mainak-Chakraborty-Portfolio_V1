@@ -271,15 +271,17 @@ section {
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   max-width: 100%;
   margin: 0 auto;
   justify-content: center;
+  align-items: center;
 }
 
 .photo-grid-item {
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-grid-item img {

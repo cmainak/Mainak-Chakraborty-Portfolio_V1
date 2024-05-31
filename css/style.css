@@ -752,6 +752,9 @@ ul{
   section {
     padding: 3rem 2rem;
   }
+  .footer-col{
+    width: 100%;
+}
 }
 
 @media (max-width: 768px) {

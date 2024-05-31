@@ -231,7 +231,7 @@ section {
   text-transform: uppercase;
 }
 
-.about .row .count-container {
+.about.row.count-container {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 42rem;
           flex: 1 1 42rem;
@@ -243,25 +243,26 @@ section {
   gap: 2rem;
 }
 
-.about .row .count-container .box {
+.about.row.count-container.box {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 20rem;
           flex: 1 1 20rem;
   padding: 3rem 4rem;
-  border-radius: .5rem;
+  border-radius:.5rem;
   background: #1a1a1a;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+  position: relative;
 }
 
-.about .row .count-container .box h3 {
-  font-size: 5rem;
-  color: #fff; 
-}
-
-.about .row .count-container .box p {
-  font-size: 2rem;
-  color: #aaa;
+.about.row.count-container.box img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
 
 .skills .box-container {

@@ -708,6 +708,49 @@ section {
   }
 }
 
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-item {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.footer-item:last-child {
+  margin-right: 0;
+}
+
+.footer-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-item li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
 @media (max-width: 450px) {
   html {
     font-size: 50%;

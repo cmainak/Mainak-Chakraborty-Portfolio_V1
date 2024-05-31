@@ -785,12 +785,19 @@ ul{
     width: 100%;
     margin-bottom: 1rem;
   }
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
 }
 
 @media (max-width: 450px) {
   html {
     font-size: 50%;
   }
+  .footer-col{
+    width: 100%;
+}
 }
 
 

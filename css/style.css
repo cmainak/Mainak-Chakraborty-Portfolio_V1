@@ -263,8 +263,8 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 200px; /* Set the maximum width to 200 pixels */
-  max-height: 150px;
+  max-width: 100%; /* Set the maximum width to 100% of the container */
+  height: auto; /* Set the height to auto to maintain the aspect ratio */
   object-fit: cover;
 }
 

@@ -713,7 +713,7 @@ section {
 	box-sizing: border-box;
 }
 .container{
-	max-width: 1170px;
+	max-width:auto;
 	margin:auto;
 } 
 .row{

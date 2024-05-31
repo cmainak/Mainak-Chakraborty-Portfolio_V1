@@ -61,6 +61,7 @@ section {
   font-size: 1.7rem;
   color: #fff;
   padding-left: 2rem;
+  font-family:'Gagalin';
 }
 
 .btn i {
@@ -75,7 +76,7 @@ section {
   margin-left: 1rem;
   -webkit-transition: .2s linear;
   transition: .2s linear;
-  font-family:'Gagalin';
+
 }
 
 .btn:hover i {

@@ -707,6 +707,22 @@ section {
     margin-bottom: 1rem;
   }
 }
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+} 
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
 
 .footer{
 	background-color: #F2F2F2;

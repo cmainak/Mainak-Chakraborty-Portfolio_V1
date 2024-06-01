@@ -679,7 +679,7 @@ section {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .heading {
     font-size: 12vw;
   }

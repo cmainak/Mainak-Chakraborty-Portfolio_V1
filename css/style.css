@@ -314,7 +314,7 @@ section {
 }
 
 .skills .box-container .box:hover {
-  background: #E00400;
+  background: lightgray;
 }
 
 .skills .box-container .box:hover h3 {
@@ -390,6 +390,7 @@ section {
   line-height: 2;
 }
 
+/*
 .portfolio {
   text-align: center;
 }
@@ -470,6 +471,7 @@ section {
 .portfolio .box-container .box .content a:hover {
   color: #fff;
 }
+*/
 
 .trending .box-container {
   display: -ms-grid;

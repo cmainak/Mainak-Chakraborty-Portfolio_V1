@@ -715,11 +715,6 @@ section {
     width: 100%;
     margin-bottom: 1rem;
   }
-
-  .map-iframe {
-    width: "1170";
-    height:"400";
-}
 }
 
 @media (max-width: 450px) {

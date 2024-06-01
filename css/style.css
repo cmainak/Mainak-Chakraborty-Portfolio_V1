@@ -296,6 +296,7 @@ section {
   max-height: 25rem;
 }
 
+
 .skills .box-container {
   display: -ms-grid;
   display: grid;
@@ -304,18 +305,7 @@ section {
   gap: 1.5rem;
 }
 
-.map-container {
-  position: relative;
-  padding-bottom: 40%; /* This will make the iframe 40% of the parent's height */
-  overflow: hidden;
-}
 
-.map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 0;
-}
 
 .skills .box-container .box {
   padding: 2rem;
@@ -725,17 +715,11 @@ section {
     width: 100%;
     margin-bottom: 1rem;
   }
-  .map-container {
-    padding-bottom: 60%; /* adjust this value to change the aspect ratio */
-  }
 }
 
 @media (max-width: 450px) {
   html {
     font-size: 50%;
-  }
-  .map-container {
-    padding-bottom: 80%; 
   }
 }
 

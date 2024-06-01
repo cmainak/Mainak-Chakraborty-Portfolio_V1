@@ -728,14 +728,19 @@ section {
     width: 100%;
     margin-bottom: 1rem;
   }
+  .map-container {
+    padding-bottom: 60%; /* adjust this value to change the aspect ratio */
+  }
 }
 
 @media (max-width: 450px) {
   html {
     font-size: 50%;
   }
+  .map-container {
+    padding-bottom: 80%; 
+  }
 }
-
 
 
 

@@ -29,6 +29,17 @@
 
     <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
 
+    <script>
+        function showPasswordPrompt(url) {
+            var password = prompt("Please enter the password to view the project:", "");
+            if (password === "0406") {
+                window.open(url);
+            } else {
+                alert("Incorrect password.");
+            }
+        }
+    </script>
+
 </head>
 
 <body>
@@ -83,7 +94,7 @@
                
                     <p>Originating from personal struggles,the project seeks to address time management and productivity challenges through innovative AI-driven solutions. </p>
 
-                    <a href="images/content/index.html" class="btn"> View Project <i class="fas fa-link"></i> </a>
+                    <a href="#" class="btn" onclick="showPasswordPrompt('images/content/index.html')"> View Project <i class="fas fa-link"></i> </a>
                 </div>
             </div>
 
@@ -101,7 +112,7 @@
                     <p> Online Ticketing Platform </p>
                     <p> ShowScout, an online ticketing platform, is a comprehensive event hub. It simplifies ticketing and event discovery, covering movies, concerts, and top sports like NBA and NHL.
                         </p>
-                    <a href="" class="btn"> View Project <i class="fas fa-link"></i> </a>
+                        <a href="#" class="btn" onclick="showPasswordPrompt('https://www.behance.net/gallery/188742959/ShowScout-(Online-Ticketing-Platform)')"> View Project <i class="fas fa-link"></i> </a>
                 </div>
             </div>
     

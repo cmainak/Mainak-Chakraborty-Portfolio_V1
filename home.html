@@ -16,53 +16,92 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap" rel="stylesheet">
         
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap" rel="stylesheet">
-    
     <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
 
-    <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
+    <style>
+        /* Styles for the password modal */
+        .password-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .password-modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 
     <script>
-        function showPasswordPrompt(url) {
-            var password = prompt("Please enter the password to view the project:", "");
-            if (password === "0406") {
-                window.open(url);
-            } else {
-                alert("Incorrect password.");
+        function showPasswordModal(url) {
+            var modal = document.getElementById("passwordModal");
+            modal.style.display = "block";
+
+            var span = document.getElementsByClassName("close")[0];
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            document.getElementById("passwordSubmit").onclick = function() {
+                var password = document.getElementById("passwordInput").value;
+                if (password === "0406") {
+                    window.open(url);
+                    modal.style.display = "none";
+                } else {
+                    alert("Incorrect password.");
+                }
             }
         }
     </script>
-
 </head>
 
 <body>
 <!-- navbar section starts  -->
-
 <nav class="navbar">
     <a href="home.html"> <i class="fas fa-home"></i> <span>Home</span> </a>
     <a href="about.html"> <i class="fas fa-user"></i> <span>About</span> </a>
-  <!--  <a href="portfolio.html"> <i class="fas fa-briefcase"></i> <span>Graphic Designs</span> </a> -->
     <a href="trending.html"> <i class="fa-regular fa-pen-to-square"></i> <span>UI/UX Projects</span> </a>
     <a href="contact.html"> <i class="fas fa-address-book"></i> <span>Contact</span> </a>
 </nav>
-
 <!-- navbar section ends -->
 
 <!-- home section starts  -->
-
 <section class="home">
-
     <div class="image">
         <img src="images/profile-pic (1) copy.png" alt="Mainak Profile Picture">
     </div>
-
     <div class="content">
         <h3>Hi, I am Mainak Chakraborty</h3>
         <span>I am an aspiring UX Designer</span>
@@ -71,15 +110,11 @@
         Experienced Research Associate with a demonstrated history of working in the market research industry. Skilled in Social Media, Mobile Marketing, Microsoft Office, Social Media Marketing, HTML, CSS, JQuery, Bootstrap and Adobe Creative Cloud.</p>
         <a href="about.html" class="btn"> About Me <i class="fas fa-user"></i> </a>
     </div>
-
 </section>
 
 <section class="trending">
-
-    <h1 class="heading"> <span>CASE</span>STUDY</h1>
-
+    <h1 class="heading"> <span>CASE</span> STUDY</h1>
     <div class="box-container">
-
         <div class="box">
             <div class="image">
                 <img src="images/Project Cover/MW.png" alt="Manage Wise Design Cover Image">
@@ -91,54 +126,55 @@
                 </div>
                 <h3>Manage Wise</h3>
                 <p>Time Management & Productivity App</p>
-               
-                    <p>Originating from personal struggles,the project seeks to address time management and productivity challenges through innovative AI-driven solutions. </p>
+                <p>Originating from personal struggles, the project seeks to address time management and productivity challenges through innovative AI-driven solutions.</p>
+                <a href="#" class="btn" onclick="showPasswordModal('images/content/index.html')"> View Project <i class="fas fa-link"></i> </a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="images/Project Cover/ShowScout.png" alt="Show Scout Cover Image">
+            </div>
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-calendar"></i> Fall, 2023 </a>
+                    <a href="#"> <i class="fas fa-user"></i> By Mainak</a>
+                </div>
+                <h3>ShowScout</h3>
+                <p> Online Ticketing Platform </p>
+                <p> ShowScout, an online ticketing platform, is a comprehensive event hub. It simplifies ticketing and event discovery, covering movies, concerts, and top sports like NBA and NHL.</p>
+                <a href="#" class="btn" onclick="showPasswordModal('https://www.behance.net/gallery/188742959/ShowScout-(Online-Ticketing-Platform)')"> View Project <i class="fas fa-link"></i> </a>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="images//Project Cover/Cover.png" alt="Main Space Designs Cover Image">
+            </div>
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-calendar"></i> Spring, 2023 </a>
+                    <a href="#"> <i class="fas fa-user"></i> By Mainak</a>
+                </div>
+                <h3>Main Space Design</h3>
+                <p>Personal Brand Case Study</p>
+                <p>Welcome to Main Space Designs! As a designer, I believe that good design is about more than just aesthetics - it's about creating experiences that are intuitive, engaging, and meaningful.</p>
+                <a href="" class="btn"> View Project <i class="fas fa-link"></i> </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-                    <a href="#" class="btn" onclick="showPasswordPrompt('images/content/index.html')"> View Project <i class="fas fa-link"></i> </a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/Project Cover/ShowScout.png" alt="Show Scout Cover Image">
-                </div>
-                <div class="content">
-                    <div class="icons">
-                        <a href="#"> <i class="fas fa-calendar"></i> Fall, 2023
-                        </a>
-                        <a href="#"> <i class="fas fa-user"></i>By Mainak</a>
-                    </div>
-                    <h3>ShowScout</h3>
-                    <p> Online Ticketing Platform </p>
-                    <p> ShowScout, an online ticketing platform, is a comprehensive event hub. It simplifies ticketing and event discovery, covering movies, concerts, and top sports like NBA and NHL.
-                        </p>
-                        <a href="#" class="btn" onclick="showPasswordPrompt('https://www.behance.net/gallery/188742959/ShowScout-(Online-Ticketing-Platform)')"> View Project <i class="fas fa-link"></i> </a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <div class="image">
-                    <img src="images//Project Cover/Cover.png" alt="Main Space Designs Cover Image">
-                </div>
-                <div class="content">
-                    <div class="icons">
-                        <a href="#"> <i class="fas fa-calendar"></i> Spring, 2023 </a>
-                        <a href="#"> <i class="fas fa-user"></i> By Mainak</a>
-                    </div>
-                    <h3>Main Space Design</h3>
-                    <p>Personal Brand Case Study</p>
-                    <p>Welcome to Main Space Designs! As a designer, I believe that good design is about more than just aesthetics - it's about creating experiences that are intuitive, engaging, and meaningful.</p>
-                    <a href="" class="btn"> View Project <i class="fas fa-link"></i> </a>
-                </div>
-            </div>
+<!-- Password Modal -->
+<div id="passwordModal" class="password-modal">
+    <div class="password-modal-content">
+        <span class="close">&times;</span>
+        <p>Please enter the password to view the project:</p>
+        <input type="password" id="passwordInput">
+        <button id="passwordSubmit">Submit</button>
+    </div>
+</div>
 
 <!-- home section ends -->
 
- <!-- Footer Section -->
-
- 
-
-
-
+<!-- Footer Section -->
 </body>
 </html>

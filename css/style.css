@@ -463,7 +463,7 @@ section {
   padding: 1rem 0;
   font-size: 1.5rem;
   line-height: 2;
-  color: #aaa;
+  color: #fff;
 }
 
 .portfolio .box-container .box .content a {
@@ -472,7 +472,7 @@ section {
 }
 
 .portfolio .box-container .box .content a:hover {
-  color: #fff;
+  color: #000000;
 }
 
 

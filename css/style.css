@@ -94,7 +94,7 @@ section {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-          font-family:'';
+          font-family:'Raleway,bold';
 }
 
 .navbar a {

@@ -1,7 +1,6 @@
-
 * {
   font-family: 'Raleway', sans-serif;
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -48,17 +47,17 @@ section {
 
 .heading {
   text-align: center;
-  font-size:55px;
+  font-size: 55px;
   color: #191919;
   margin-bottom: 48px;
   text-transform: uppercase;
-  font-family:'Raleway';
+  font-family: 'Raleway';
 }
 
 .heading span {
   text-transform: uppercase;
   color: #E00400;
-  font-family:'Raleway';
+  font-family: 'Raleway';
 }
 
 .btn {
@@ -70,7 +69,7 @@ section {
   font-size: 1.7rem;
   color: #fff;
   padding-left: 2rem;
-  font-family:'Raleway';
+  font-family: 'Raleway';
 }
 
 .btn i {
@@ -85,7 +84,6 @@ section {
   margin-left: 1rem;
   -webkit-transition: .2s linear;
   transition: .2s linear;
-
 }
 
 .btn:hover i {
@@ -104,7 +102,7 @@ section {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-          font-family:'Raleway,bold';
+  font-family: 'Raleway, bold';
 }
 
 .navbar a {
@@ -178,7 +176,7 @@ section {
   color: #E00400;
   padding: .5rem 0;
   display: block;
-  padding-top:3rem;
+  padding-top: 3rem;
 }
 
 .home .content p {
@@ -188,10 +186,10 @@ section {
   line-height: 2;
 }
 
-.aboutme{
+.aboutme {
   font-size: 2.2rem;
   color: #aaa;
-  padding-top:3rem;
+  padding-top: 3rem;
 }
 
 .about .row {
@@ -217,7 +215,7 @@ section {
   color: #191919;
   text-transform: uppercase;
   padding-bottom: 1rem;
-  padding-top:3rem;
+  padding-top: 3rem;
 }
 
 .about .row .info-container .box-container {
@@ -247,7 +245,7 @@ section {
   color: #E00400;
   font-weight: normal;
   text-transform: uppercase;
-  padding-top:3rem;
+  padding-top: 3rem;
 }
 
 .about.row.count-container {
@@ -270,7 +268,7 @@ section {
       -ms-flex: 1 1 20rem;
           flex: 1 1 20rem;
   padding: 3rem 4rem;
-  border-radius:.5rem;
+  border-radius: .5rem;
   background: #1a1a1a;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
@@ -311,7 +309,6 @@ section {
   max-height: 25rem;
 }
 
-
 .skills .box-container {
   display: -ms-grid;
   display: grid;
@@ -319,8 +316,6 @@ section {
       grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 1.5rem;
 }
-
-
 
 .skills .box-container .box {
   padding: 2rem;
@@ -408,7 +403,6 @@ section {
   line-height: 2;
 }
 
-
 .portfolio {
   text-align: center;
 }
@@ -489,7 +483,6 @@ section {
 .portfolio .box-container .box .content a:hover {
   color: #E00400;
 }
-
 
 .trending .box-container {
   display: -ms-grid;
@@ -734,7 +727,6 @@ section {
   height: auto;
   display: block;
 }
-
 
 /* Testimonials Header Section Styles */
 .testimonials-header {
@@ -1009,9 +1001,6 @@ footer p {
   font-size: 14px;
 }
 
-
-
-
 /* Sliding animation */
 @keyframes slide {
   0% {
@@ -1021,7 +1010,8 @@ footer p {
       transform: translateX(-100%);
   }
 }
-/*New Navbar*/
+
+/* New Navbar */
 header {
   padding: 20px;
   background-color: #fff;
@@ -1121,12 +1111,7 @@ nav {
   margin-left: 5px;
 }
 
-
-
-
-
-
-/*media queries*/
+/* Media queries */
 
 @media (max-width: 1200px) {
   html {
@@ -1135,7 +1120,6 @@ nav {
   section {
     padding: 3rem 2rem;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -1143,7 +1127,7 @@ nav {
     font-size: 12vw;
   }
   .navbar a i {
-    padding:20px;
+    padding: 20px;
   }
   .navbar a span {
     display: none;
@@ -1173,52 +1157,52 @@ nav {
     flex-direction: column;
     text-align: center;
     align-items: center; /* Center the content horizontally */
-}
+  }
 
-/* Mobile menu styles */
-.menu-toggle {
-  display: block;
-  z-index: 1001; /* Ensure it stays above the dropdown menu */
-  padding:20px;  /* Add padding for better spacing */
-  margin-right: 30px; /* Add margin-right to create space on the right */
-}
+  /* Mobile menu styles */
+  .menu-toggle {
+    display: block;
+    z-index: 1001; /* Ensure it stays above the dropdown menu */
+    padding: 20px;  /* Add padding for better spacing */
+    margin-right: 30px; /* Add margin-right to create space on the right */
+  }
 
-/* Nav links in mobile view */
-.nav-links {
-  display: none;
-  flex-direction: column;
-  width: 100%;
-  position: fixed; /* Ensure the dropdown menu is fixed */
-  top: 60px; /* Align it to the top of the viewport */
-  left: 0;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  padding: 60px 0; /* Adjusted padding to create space from the top */
-  height: calc(100vh - 60px); /* Ensure the dropdown covers the viewport height */
-  overflow-y: auto; /* Allow scrolling within the dropdown */
-}
+  /* Nav links in mobile view */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: fixed; /* Ensure the dropdown menu is fixed */
+    top: 100px; /* Align it to the top of the viewport, bringing it down */
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 60px 0; /* Adjusted padding to create space from the top */
+    height: calc(100vh - 60px); /* Ensure the dropdown covers the viewport height */
+    overflow-y: auto; /* Allow scrolling within the dropdown */
+  }
 
-.nav-links.active {
-  display: flex;
-  padding: 0 20px; /* Add padding for better spacing */
-}
+  .nav-links.active {
+    display: flex;
+    padding: 0 20px; /* Add padding for better spacing */
+  }
 
-.nav-links a {
-  padding: 20px 20px; /* Added padding for alignment */
-  text-align: center; /* Center align the text */
-  border-bottom: none; /* Removed the grey lines */
-}
+  .nav-links a {
+    padding: 20px 20px; /* Added padding for alignment */
+    text-align: center; /* Center align the text */
+    border-bottom: none; /* Removed the grey lines */
+  }
 
-.nav-links a::before {
-  width: calc(100% - 40px); /* Adjust width to fit within the padding */
-  left: 50%; /* Center align the pseudo-element */
-  transform: translateX(-50%) scaleX(0); /* Center align and apply scaleX for animation */
-}
+  .nav-links a::before {
+    width: calc(100% - 40px); /* Adjust width to fit within the padding */
+    left: 50%; /* Center align the pseudo-element */
+    transform: translateX(-50%) scaleX(0); /* Center align and apply scaleX for animation */
+  }
 
-.nav-links a:hover::before {
-  transform: translateX(-50%) scaleX(1); /* Apply centered scaleX for hover effect */
-}
+  .nav-links a:hover::before {
+    transform: translateX(-50%) scaleX(1); /* Apply centered scaleX for hover effect */
+  }
 }
 
 @media (max-width: 450px) {
@@ -1226,4 +1210,3 @@ nav {
     font-size: 50%;
   }
 }
-

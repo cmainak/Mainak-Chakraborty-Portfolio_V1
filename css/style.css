@@ -168,6 +168,7 @@ section {
   color: #E00400;
   padding: .5rem 0;
   display: block;
+  padding-top:3rem;
 }
 
 .home .content p {
@@ -180,6 +181,7 @@ section {
 .aboutme{
   font-size: 2.2rem;
   color: #aaa;
+  padding-top:3rem;
 }
 
 .about .row {
@@ -205,6 +207,7 @@ section {
   color: #191919;
   text-transform: uppercase;
   padding-bottom: 1rem;
+  padding-top:3rem;
 }
 
 .about .row .info-container .box-container {
@@ -234,6 +237,7 @@ section {
   color: #E00400;
   font-weight: normal;
   text-transform: uppercase;
+  padding-top:3rem;
 }
 
 .about.row.count-container {

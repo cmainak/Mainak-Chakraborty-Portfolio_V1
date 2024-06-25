@@ -27,6 +27,16 @@ html::-webkit-scrollbar-thumb {
   border-radius: 80px;
 }
 
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 80px; /* Adjust the height as needed */
+  width: auto;
+}
+
 body {
   background: white;
   padding-bottom: 104px;
@@ -142,7 +152,7 @@ section {
       -ms-flex: 1 1 42rem;
           flex: 1 1 42rem;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 120px;
 }
 
 .home .image img {

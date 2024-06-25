@@ -288,7 +288,7 @@ section {
   max-width: 100%; /* Set the maximum width to 100% of the container */
   height: auto; /* Set the height to auto to maintain the aspect ratio */
   object-fit: cover;
-  border-radius: 2rem;
+
 }
 
 .photo-grid {
@@ -1175,8 +1175,8 @@ nav {
   .menu-toggle {
     display: block;
     z-index: 1001; /* Ensure it stays above the dropdown menu */
-    padding: 20px;  /* Add padding for better spacing */
-    margin-right: 30px; /* Add margin-right to create space on the right */
+    padding: 20px 0; /* Add padding for better spacing */
+    margin-left: auto; /* Align it to the right */
   }
 
   /* Nav links in mobile view */

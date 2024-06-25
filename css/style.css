@@ -1162,8 +1162,8 @@ nav {
 .menu-toggle {
   display: block;
   z-index: 1001; /* Ensure it stays above the dropdown menu */
-  padding: 30px; /* Add padding for better spacing */
-  margin-right: 20px; /* Add margin-right to create space on the right */
+  padding:20px;  /* Add padding for better spacing */
+  margin-right: 30px; /* Add margin-right to create space on the right */
 }
 
 /* Nav links in mobile view */

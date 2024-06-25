@@ -1126,7 +1126,7 @@ nav {
     font-size: 12vw;
   }
   .navbar a i {
-    padding: 0;
+    padding:20px;
   }
   .navbar a span {
     display: none;
@@ -1162,7 +1162,7 @@ nav {
 .menu-toggle {
   display: block;
   z-index: 1001; /* Ensure it stays above the dropdown menu */
-  padding: 10px; /* Add padding for better spacing */
+  padding: 30px; /* Add padding for better spacing */
   margin-right: 20px; /* Add margin-right to create space on the right */
 }
 
@@ -1177,7 +1177,7 @@ nav {
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: 20px 0; /* Adjusted padding to create space from the top */
+  padding: 60px 0; /* Adjusted padding to create space from the top */
   height: calc(100vh - 60px); /* Ensure the dropdown covers the viewport height */
   overflow-y: auto; /* Allow scrolling within the dropdown */
 }

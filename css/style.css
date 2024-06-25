@@ -142,6 +142,7 @@ section {
       -ms-flex: 1 1 42rem;
           flex: 1 1 42rem;
   text-align: center;
+  padding-top: 80px;
 }
 
 .home .image img {

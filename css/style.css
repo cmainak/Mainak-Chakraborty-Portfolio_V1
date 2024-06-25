@@ -668,6 +668,70 @@ section {
   color: #191919;
 }
 
+/* Tools Section Styles */
+
+.tools-header {
+  width: 100%;
+  padding: 50px 0;
+  background-color: #fff;
+  text-align: center; /* Center align text */
+  border-top: 1px solid #eaeaea;
+}
+
+.tools-section {
+  width: 100%;
+  background-color: white;
+  padding: 50px; /* Set padding to 50px */
+  border-top: 1px solid #eaeaea;
+  text-align: center; /* Center align text */
+}
+
+.tools-slider {
+  overflow: hidden; /* Hide overflow to make the slider */
+  width: 100%;
+}
+
+.tools-content-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tools-content {
+  display: flex;
+  transition: transform 0.1s linear; /* Adjust transition duration here */
+  will-change: transform;
+  padding: 0 20px; /* Adjust the padding for alignment */
+}
+
+.tool-image {
+  flex: 0 0 auto;
+  width: 150px; /* Adjust width as needed */
+  margin: 0 10px; /* Adjust margin as needed */
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool-image img {
+  width: 60%;
+  height: auto;
+  display: block;
+}
+
+
+/* Sliding animation */
+@keyframes slide {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+
 
 
 

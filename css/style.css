@@ -226,6 +226,7 @@ section {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 2rem;
+  border-radius: 2rem;
 }
 
 .about .row .info-container .box-container .box {
@@ -239,6 +240,7 @@ section {
   color: darkgrey;
   padding: 1rem 0;
   font-weight: normal;
+  border-radius: 2rem;
 }
 
 .about .row .info-container .box-container .box h3 span {
@@ -246,6 +248,7 @@ section {
   font-weight: normal;
   text-transform: uppercase;
   padding-top: 3rem;
+  border-radius: 2rem;
 }
 
 .about.row.count-container {
@@ -258,6 +261,7 @@ section {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 2rem;
+  border-radius: 2rem;
 }
 
 .about.row.count-container.box {
@@ -273,6 +277,7 @@ section {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
   position: relative;
+  border-radius: 2rem;
 }
 
 .about.row.count-container.box img {
@@ -283,6 +288,7 @@ section {
   max-width: 100%; /* Set the maximum width to 100% of the container */
   height: auto; /* Set the height to auto to maintain the aspect ratio */
   object-fit: cover;
+  border-radius: 2rem;
 }
 
 .photo-grid {

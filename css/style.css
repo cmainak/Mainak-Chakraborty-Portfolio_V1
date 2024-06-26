@@ -32,7 +32,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .logo {
-  height: 80px; /* Adjust the height as needed */
+  height: 65px; /* Adjust the height as needed */
   width: auto;
 }
 
@@ -1026,7 +1026,7 @@ footer p {
 /* New Navbar */
 header {
   padding: 20px;
-  background-color: #fff;
+  background-color: #F9F9F9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1000;

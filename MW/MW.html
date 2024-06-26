@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="">
-  <head>
+<html lang="en">
+<head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 
-     <!-- font awesome cdn link  -->
+    <!-- Font Awesome CDN link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="../css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
 
     <!-- Resize Hack -->
     <script type="text/javascript">
-      window.resizeTo(screen.width, screen.height);
+        window.resizeTo(screen.width, screen.height);
     </script>
     
     <!--[if lt IE 9]>
@@ -33,170 +33,163 @@
     <![endif]-->
 
     <script id="__ENTRY__" type="application/json">
-      {".js":["rise/e0131bd3.js"]}
+        {".js":["rise/e0131bd3.js"]}
     </script>
 
     <script id="__REMOTE_ENTRIES__" type="application/json">
-      {"mondrian":{".js":["mondrian/entry.js"]}}
+        {"mondrian":{".js":["mondrian/entry.js"]}}
     </script>
 
     <script>
-      (function() {
-        const jsonp = {}
+        (function() {
+            const jsonp = {}
 
-        function loadModule(manifest) {
-          const p = []
+            function loadModule(manifest) {
+                const p = []
 
-          if (manifest['.css'] != null) {
-            for (var idx = 0; idx < manifest['.css'].length; idx++) {
-              p.push(new Promise((resolve, reject) => {
-                var link = document.createElement('link')
-                link.onload = resolve
-                link.onerror = reject
-                link.rel = 'stylesheet'
-                link.href = 'lib/' + manifest['.css'][idx]
-                document.body.appendChild(link)
-              }))
+                if (manifest['.css'] != null) {
+                    for (var idx = 0; idx < manifest['.css'].length; idx++) {
+                        p.push(new Promise((resolve, reject) => {
+                            var link = document.createElement('link')
+                            link.onload = resolve
+                            link.onerror = reject
+                            link.rel = 'stylesheet'
+                            link.href = 'lib/' + manifest['.css'][idx]
+                            document.body.appendChild(link)
+                        }))
+                    }
+                }
+
+                if (manifest['.js'] != null) {
+                    for (var idx = 0; idx < manifest['.js'].length; idx++) {
+                        p.push(new Promise((resolve, reject) => {
+                            var script = document.createElement('script')
+                            script.onload = resolve
+                            script.onerror = reject
+                            script.src = 'lib/' + manifest['.js'][idx]
+                            document.body.appendChild(script)
+                        }))
+                    }
+                }
+
+                return Promise.all(p)
             }
-          }
 
-          if (manifest['.js'] != null) {
-            for (var idx = 0; idx < manifest['.js'].length; idx++) {
-              p.push(new Promise((resolve, reject) => {
-                var script = document.createElement('script')
-                script.onload = resolve
-                script.onerror = reject
-                script.src = 'lib/' + manifest['.js'][idx]
-                document.body.appendChild(script)
-              }))
+            function deserialize(str) {
+                const buffer = Uint8Array.from(atob(str), c => c.charCodeAt(0))
+                const json = new TextDecoder().decode(buffer)
+                const result = JSON.parse(json)
+                return result
             }
-          }
 
-          return Promise.all(p)
-        }
+            function __loadEntry() {
+                return loadModule(JSON.parse(document.getElementById('__ENTRY__').textContent))
+            }
 
-        function deserialize(str) {
-          const buffer = Uint8Array.from(atob(str), c => c.charCodeAt(0))
-          const json = new TextDecoder().decode(buffer)
-          const result = JSON.parse(json)
-          return result
-        }
+            function __loadRemoteEntry(name) {
+                const manifest = JSON.parse(document.getElementById('__REMOTE_ENTRIES__').textContent)
+                if (manifest[name] == null) throw new Error(`Missing manifest for remote entry "${name}".`)
+                return loadModule(manifest[name])
+            }
+            
+            async function __loadJsonp(id, path) {
+                try {
+                    return await new Promise((resolve, reject) => {
+                        try {
+                            jsonp[id] = resolve
+                            const script = document.createElement('script')
+                            script.onerror = reject
+                            script.src = `./${path}`
+                            document.head.appendChild(script)
+                        } catch (err) {
+                            reject(err)
+                        }
+                    })
+                } finally {
+                    delete jsonp[id]
+                }
+            }
 
-        function __loadEntry() {
-          return loadModule(JSON.parse(document.getElementById('__ENTRY__').textContent))
-        }
+            function __resolveJsonp(id, data) {
+                const resolve = jsonp[id]
+                if (typeof resolve !== 'function') {
+                    throw new Error(`Could not load JSONP "${id}"`)
+                }
+                resolve(data)
+            }
 
-        function __loadRemoteEntry(name) {
-          const manifest = JSON.parse(document.getElementById('__REMOTE_ENTRIES__').textContent)
-          if (manifest[name] == null) throw new Error(`Missing manifest for remote entry "${name}".`)
-          return loadModule(manifest[name])
-        }
-        
-        async function __loadJsonp(id, path) {
-          try {
-            return await new Promise((resolve, reject) => {
-              try {
-                jsonp[id] = resolve
-                const script = document.createElement('script')
-                script.onerror = reject
-                script.src = `./${path}`
-                document.head.appendChild(script)
-              } catch (err) {
-                reject(err)
-              }
-            })
-          } finally {
-            delete jsonp[id]
-          }
-        }
+            async function __fetchCourse(name) {
+                name = name == null ? window.i18n.default : name
+                if (!window.i18n.available.includes(name)) {
+                    console.warn(`Could not load locale "${name}"`)
+                    name = window.i18n.available[0]
+                }
+                const encoded = await __loadJsonp(`course:${name}`, `locales/${name}.js`)
+                const courseData = deserialize(encoded)
+                return courseData
+            }
 
-        function __resolveJsonp(id, data) {
-          const resolve = jsonp[id]
-          if (typeof resolve !== 'function') {
-            throw new Error(`Could not load JSONP "${id}"`)
-          }
-          resolve(data)
-        }
-
-        async function __fetchCourse(name) {
-          name = name == null ? window.i18n.default : name
-          if (!window.i18n.available.includes(name)) {
-            console.warn(`Could not load locale "${name}"`)
-            name = window.i18n.available[0]
-          }
-          const encoded = await __loadJsonp(`course:${name}`, `locales/${name}.js`)
-          const courseData = deserialize(encoded)
-          return courseData
-        }
-
-        window.__loadEntry = __loadEntry
-        window.__loadRemoteEntry = __loadRemoteEntry
-        window.__loadJsonp = __loadJsonp
-        window.__resolveJsonp = __resolveJsonp
-        window.__fetchCourse = __fetchCourse
-      })()
+            window.__loadEntry = __loadEntry
+            window.__loadRemoteEntry = __loadRemoteEntry
+            window.__loadJsonp = __loadJsonp
+            window.__resolveJsonp = __resolveJsonp
+            window.__fetchCourse = __fetchCourse
+        })()
     </script>
-  </head>
-  <body>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-photo">
+                <a href="../home.html" class="logo-link">
+                    <img src="../images/MSD.png" alt="Logo" class="logo" style="height: 80px; width: auto;">
+                    <div class="logo-text" style="font-size: 18px; color: #333; margin-top: 5px;">Main Space Designs</div>
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../trending.html">Academic Projects</a></li>
+                    <li><a href="https://drive.google.com/file/d/1jE50ywkLIXHRRu0cfAXHVwBlt5G28MKE/view?usp=drive_link" target="_blank">Resume <img src="../images/external icon.png" alt="External Link Icon" class="external-link-icon"></a></li>
+                    <li><a href="" target="_blank">Gallery <img src="../images/external icon.png" alt="External Link Icon" class="external-link-icon"></a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
     <div id="app"></div>
     <script type="text/javascript">
-  (function(root) {
-    window.i18n = {"available":["und"],"default":"und"};
-    window.partnerContent = [];
+        (function(root) {
+            window.i18n = {"available":["und"],"default":"und"};
+            window.partnerContent = [];
 
-    function isExport() {
-      return true;
-    }
+            function isExport() {
+                return true;
+            }
 
-    function resolvePath(path) {
-      return ('assets/').concat(path);
-    }
+            function resolvePath(path) {
+                return ('assets/').concat(path);
+            }
 
-    function resolveFontPath(font) {
-      return ('lib/fonts/').concat(font.key.split('/').reverse()[0]);
-    }
+            function resolveFontPath(font) {
+                return ('lib/fonts/').concat(font.key.split('/').reverse()[0]);
+            }
 
-    function fetchAvailableLocales() {
-      return window.i18n
-    }
+            function fetchAvailableLocales() {
+                return window.i18n
+            }
 
-    root.Runtime = {
-      fetch: window.__fetchCourse,
-      fetchAvailableLocales: fetchAvailableLocales,
-      isExport: isExport,
-      resolvePath: resolvePath,
-      resolveFontPath: resolveFontPath
-    };
-  }(window));
-</script>
-
-    
+            root.Runtime = {
+                fetch: window.__fetchCourse,
+                fetchAvailableLocales: fetchAvailableLocales,
+                isExport: isExport,
+                resolvePath: resolvePath,
+                resolveFontPath: resolveFontPath
+            };
+        }(window));
+    </script>
     <script>__loadEntry()</script>
-
-   <!-- navbar section starts -->
-   <header>
-    <div class="header-container">
-        <div class="logo-photo">
-            <a href="home.html" class="logo-link">
-                <img src="Images/MSD.png" alt="Logo" class="logo" style="height: 80px; width: auto;">
-                <div class="logo-text" style="font-size: 18px; color: #333; margin-top: 5px;">Main Space Designs</div>
-            </a>
-        </div>
-        <nav>
-            <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
-            <ul class="nav-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="trending.html">Academic Projects</a></li>
-                <li><a href="https://drive.google.com/file/d/1jE50ywkLIXHRRu0cfAXHVwBlt5G28MKE/view?usp=drive_link" target="_blank">Resume <img src="Images/external icon.png" alt="External Link Icon" class="external-link-icon"></a>
-                </li>
-                <li><a href="" target="_blank">Gallery <img src="" alt="External Link Icon" class="external-link-icon"></a>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<!-- navbar section ends -->
-    
-  </body>
+</body>
 </html>

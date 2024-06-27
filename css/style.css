@@ -1154,7 +1154,7 @@ nav {
 .certifications .box-container {
   display: grid; /* Use grid layout */
   grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr)); /* Match the trending section grid */
-  gap: 10.5rem;
+  gap: 3rem;
   margin-bottom: 2rem;
 }
 

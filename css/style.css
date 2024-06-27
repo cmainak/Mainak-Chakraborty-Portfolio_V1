@@ -11,6 +11,7 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  height: 100%; /* Ensures the body takes the full height of the viewport */
 }
 
 html::-webkit-scrollbar {
@@ -38,7 +39,9 @@ html::-webkit-scrollbar-thumb {
 
 body {
   background: white;
-  padding-bottom: 104px;
+ 
+  display: flex;
+  flex-direction: column;
 }
 
 section {
@@ -1013,9 +1016,11 @@ section {
 footer {
   width: 100%;
   background-color: #fff;
-  padding: 20px 0;
+  padding: 20px 0; /* Equal padding on top and bottom */
   text-align: center;
   border-top: 1px solid #eaeaea;
+  margin: 0; /* Ensure no extra margin */
+  flex-shrink: 0; /* Prevents the footer from shrinking */
 }
 
 footer p {

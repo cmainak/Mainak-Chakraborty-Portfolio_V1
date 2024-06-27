@@ -22,7 +22,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #A4C7FC;
+  background: #1370fb;
   border-radius: 80px;
 }
 
@@ -56,7 +56,7 @@ section {
 
 .heading span {
   text-transform: uppercase;
-  color: #A4C7FC;
+  color: #1370fb;
   font-family: 'Raleway';
 }
 
@@ -64,10 +64,10 @@ section {
   display: inline-block;
   margin-top: 1rem;
   border-radius: 5rem;
-  background: #A4C7FC;
+  background: #1370fb;
   padding: .7rem;
   font-size: 1.7rem;
-  color: black;
+  color: white;
   padding-left: 2rem;
   font-family: 'Raleway';
 }
@@ -79,7 +79,7 @@ section {
   font-size: 1.7rem;
   text-align: center;
   background: #fff;
-  color: #A4C7FC;
+  color: #1370fb;
   border-radius: 50%;
   margin-left: 1rem;
   -webkit-transition: .2s linear;
@@ -119,12 +119,12 @@ section {
 }
 
 .navbar a i {
-  color: #A4C7FC;
+  color: #1370fb;
   padding-right: .5rem;
 }
 
 .navbar a:hover {
-  background: #A4C7FC;
+  background: #1370fb;
   padding-bottom: 6rem;
 }
 
@@ -244,7 +244,7 @@ section {
 }
 
 .about .row .info-container .box-container .box h3 span {
-  color: #A4C7FC;
+  color: #1370fb;
   font-weight: normal;
   text-transform: uppercase;
   padding-top: 3rem;
@@ -346,7 +346,7 @@ section {
 }
 
 .skills .box-container .box h3 {
-  color: #A4C7FC;
+  color: #1370fb;
   font-size: 1.7rem;
   font-weight: normal;
   text-transform: uppercase;
@@ -379,7 +379,7 @@ section {
   line-height: 4.5rem;
   font-size: 1.7rem;
   border-radius: 50%;
-  background: #A4C7FC;
+  background: #1370fb;
   color: white;
   text-align: center;
   position: absolute;
@@ -389,10 +389,10 @@ section {
 
 .education .box-container .box span {
   font-size: 1.7rem;
-  color: #fff;
+  color: black;
   border-radius: 5rem;
   padding: .5rem 1.5rem;
-  background: #1a1a1a;
+  background: #c4c4c4;
 }
 
 .education .box-container .box h3 {

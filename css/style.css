@@ -1143,15 +1143,12 @@ nav {
 .certifications {
   padding: 5rem 9%; /* Matching padding with trending section */
   background: #007BFF;
-  color: #fff;
 }
 
 .certifications .section-header {
   text-align: center;
   font-size: 36px;
   margin-bottom: 30px;
-  color: #fff;
-
 }
 
 .certifications .box-container {

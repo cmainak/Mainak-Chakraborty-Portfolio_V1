@@ -173,7 +173,7 @@ section {
 
 .home .content span {
   font-size: 3rem;
-  color: #A4C7FC;
+  color: #1370fb;
   padding: .5rem 0;
   display: block;
   padding-top: 3rem;
@@ -548,12 +548,12 @@ section {
 }
 
 .trending .box-container .box .content .icons a:hover {
-  color: #A4C7FC;
+  color: #1370fb;
 }
 
 .trending .box-container .box .content .icons a i {
   padding-right: .5rem;
-  color: #A4C7FC;
+  color: #1370fb;
 }
 
 .trending .box-container .box .content h3 {
@@ -615,7 +615,7 @@ section {
 
 .contact .row .info-container .box-container .box i {
   font-size: 3rem;
-  color: #A4C7FC;
+  color: #1370fb;
 }
 
 .contact .row .info-container .box-container .box h3 {
@@ -636,7 +636,7 @@ section {
 }
 
 .contact .row .info-container .share a:hover {
-  background: #A4C7FC;
+  background: #1370fb;
 }
 
 .contact .row form {

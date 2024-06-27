@@ -1179,6 +1179,8 @@ nav {
     padding: 20px;
   }
 
+  
+
   /* Mobile menu styles */
   .menu-toggle {
     display: block;
@@ -1229,4 +1231,7 @@ nav {
   html {
     font-size: 50%;
   }
+  
 }
+
+

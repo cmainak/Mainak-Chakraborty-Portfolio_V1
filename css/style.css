@@ -173,7 +173,7 @@ section {
 
 .home .content span {
   font-size: 3rem;
-  color: #1370fb;
+  color: #A4C7FC;
   padding: .5rem 0;
   display: block;
   padding-top: 3rem;
@@ -786,7 +786,7 @@ section {
   display: flex;
   align-items: center;
   gap: 40px;
-  max-width: 1200px; /* Ensure the section matches the main container width */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -799,7 +799,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 40px; /* Add margin-right to create gap */
+  margin: 0 auto; /* Center-align the avatar */
 }
 
 .avatar img {
@@ -862,25 +862,25 @@ section {
 
 .testimonial-box {
   max-width: 600px;
-  padding: 20px 40px 20px 60px; /* Adjust padding to accommodate the quote mark */
+  padding: 20px 40px 20px 60px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative; /* Added for positioning the quote mark */
+  position: relative;
 }
 
 .quote-mark {
   position: absolute;
-  top: 20px; /* Adjust top position */
-  left: 20px; /* Adjust left position */
-  font-size: 40px; /* Adjust size if necessary */
-  color: #ff4500; /* Adjust color if necessary */
+  top: 20px;
+  left: 20px;
+  font-size: 40px;
+  color: #ff4500;
 }
 
 .testimonial-text {
   font-size: 18px;
   margin-bottom: 20px;
-  margin-top: 20px; /* Add margin-top to create space below the quote mark */
+  margin-top: 20px;
 }
 
 .testimonial-author a {
@@ -902,6 +902,7 @@ section {
   font-size: 16px;
   color: #666;
 }
+
 
 /* Contact Section Styles */
 .contact-section {
@@ -1168,6 +1169,14 @@ nav {
     flex-direction: column;
     text-align: center;
     align-items: center; /* Center the content horizontally */
+  }
+
+  .avatar {
+    margin-bottom: 20px; /* Add margin for spacing */
+  }
+
+  .testimonial-box {
+    padding: 20px;
   }
 
   /* Mobile menu styles */

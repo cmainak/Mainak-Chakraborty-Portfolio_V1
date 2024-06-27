@@ -1142,26 +1142,28 @@ nav {
 
 .certifications {
   padding: 5rem 9%; /* Matching padding with trending section */
-  background: #f9f9f9;
+  background: #007BFF;
+  color: #fff;
 }
 
 .certifications .section-header {
   text-align: center;
   font-size: 36px;
-  margin-bottom: 40px;
-  color: #333;
+  margin-bottom: 30px;
+  color: #fff;
+
 }
 
 .certifications .box-container {
   display: grid; /* Use grid layout */
   grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr)); /* Match the trending section grid */
-  gap: 1.5rem;
+  gap: 10.5rem;
   margin-bottom: 2rem;
 }
 
 .certifications .box {
   text-align: center;
-  padding: 2rem; /* Matching padding inside the box */
+  padding: 4rem 4rem; /* Matching padding inside the box */
   background: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);

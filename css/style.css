@@ -773,6 +773,7 @@ section {
   color: #333;
 }
 
+
 .section-subheader {
   margin-top: 10px; /* Add top margin for spacing */
 }
@@ -1138,6 +1139,68 @@ nav {
   height: 16px;
   margin-left: 5px;
 }
+
+.certifications {
+  padding: 5rem 9%; /* Matching padding with trending section */
+  background: #f9f9f9;
+}
+
+.certifications .section-header {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.certifications .box-container {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr)); /* Match the trending section grid */
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.certifications .box {
+  text-align: center;
+  padding: 2rem; /* Matching padding inside the box */
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.certifications .box img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.certifications .box .content h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.certifications .box .content p {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.certifications .box .btn {
+  font-size: 1.5rem;
+  color: #fff;
+  background: #1370fb;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.certifications .box .btn:hover {
+  background: #0056b3;
+}
+
 /* Media queries */
 
 @media (max-width: 1200px) {

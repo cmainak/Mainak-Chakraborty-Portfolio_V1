@@ -1017,17 +1017,17 @@ section {
 
 footer {
   width: 100%;
-  background-color: #F9F9F9;
+  background-color: #007bff;
   padding: 20px 0; /* Equal padding on top and bottom */
   text-align: center;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid white;
   margin: 0; /* Ensure no extra margin */
   flex-shrink: 0; /* Prevents the footer from shrinking */
 }
 
 footer p {
   margin: 0;
-  color: #333;
+  color: #fff;
   font-size: 14px;
 }
 

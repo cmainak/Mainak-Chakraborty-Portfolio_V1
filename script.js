@@ -25,8 +25,20 @@ document.addEventListener("DOMContentLoaded", function() {
     slideTools();
 
     // Hamburger menu toggle
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.toggle('active');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
         document.body.classList.toggle('menu-open'); // Toggle body class for no scroll
+    });
+
+    // Close the menu when a link is clicked
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+    navLinksItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
     });
 });

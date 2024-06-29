@@ -33,12 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.classList.toggle('menu-open'); // Toggle body class for no scroll
     });
 
-    // Close the menu when a link is clicked
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-    navLinksItems.forEach(item => {
-        item.addEventListener('click', () => {
+    // Close menu when clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
             navLinks.classList.remove('active');
             document.body.classList.remove('menu-open');
-        });
+        }
     });
 });

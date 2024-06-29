@@ -79,6 +79,18 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        /* CSS for scroll animations */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 
     <script>
@@ -98,40 +110,74 @@
         function closeModal() {
             document.getElementById("passwordModal").style.display = "none";
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const scrollElements = document.querySelectorAll('.scroll-animation');
+
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+
+            const displayScrollElement = (element) => {
+                element.classList.add('visible');
+            };
+
+            const hideScrollElement = (element) => {
+                element.classList.remove('visible');
+            };
+
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    } else {
+                        hideScrollElement(el);
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+
+            // Initial check to apply animation if elements are already in view
+            handleScrollAnimation();
+        });
     </script>
-    
 </head>
 
 <body>
-       <!-- navbar section starts -->
-   <header>
-    <div class="header-container">
-        <div class="logo-photo">
-            <a href="home.html" class="logo-link">
-                <img src="Images/MSD.png" alt="Logo" class="logo" style="height: 80px; width: auto;">
-                <div class="logo-text" style="font-size: 18px; color: #333; margin-top: 5px;">Main Space Designs</div>
-            </a>
+    <!-- navbar section starts -->
+    <header class="scroll-animation">
+        <div class="header-container">
+            <div class="logo-photo">
+                <a href="home.html" class="logo-link">
+                    <img src="Images/MSD.png" alt="Logo" class="logo" style="height: 80px; width: auto;">
+                    <div class="logo-text" style="font-size: 18px; color: #333; margin-top: 5px;">Main Space Designs</div>
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trending.html">Academic Projects</a></li>
+                    <li><a href="https://drive.google.com/file/d/1jE50ywkLIXHRRu0cfAXHVwBlt5G28MKE/view?usp=drive_link" target="_blank">Resume <img src="Images/external icon.png" alt="External Link Icon" class="external-link-icon"></a>
+                    </li>
+                    <li><a href="" target="_blank">Gallery </a>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
-            <ul class="nav-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="trending.html">Academic Projects</a></li>
-                <li><a href="https://drive.google.com/file/d/1jE50ywkLIXHRRu0cfAXHVwBlt5G28MKE/view?usp=drive_link" target="_blank">Resume <img src="Images/external icon.png" alt="External Link Icon" class="external-link-icon"></a>
-                </li>
-                <li><a href="" target="_blank">Gallery </a>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<!-- navbar section ends -->
+    </header>
+    <!-- navbar section ends -->
 
-    <!-- home section starts  -->
-    
-    <section class="home">
-      
+    <!-- home section starts -->
+    <section class="home scroll-animation">
         <div class="image">
             <img src="images/MC_Cover.png" alt="Mainak Profile Picture">
         </div>
@@ -144,24 +190,15 @@
             <a href="about.html" class="btn"> About Me <i class="fas fa-user"></i> </a>
         </div>
     </section>
+    <!-- home section ends -->
 
-    
-
-    <!-- trending section starts  -->
-    <section class="trending">
+    <!-- trending section starts -->
+    <section class="trending scroll-animation">
         <div class="section-header">
             <h2><center>Case Studies</center></h2>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
         <div class="box-container">
-            <div class="box">
+            <div class="box scroll-animation">
                 <div class="image">
                     <img src="images/Project Cover/MW.png" alt="Manage Wise Design Cover Image">
                 </div>
@@ -177,14 +214,13 @@
                 </div>
             </div>
 
-            <div class="box">
+            <div class="box scroll-animation">
                 <div class="image">
                     <img src="images/Project Cover/ShowScout.png" alt="Show Scout Cover Image">
                 </div>
                 <div class="content">
                     <div class="icons">
-                        <a href="#"> <i class="fas fa-calendar"></i> Fall, 2023
-                        </a>
+                        <a href="#"> <i class="fas fa-calendar"></i> Fall, 2023 </a>
                         <a href="#"> <i class="fas fa-user"></i>By Mainak</a>
                     </div>
                     <h3>ShowScout</h3>
@@ -193,8 +229,8 @@
                     <a href="SS/SS.html" class="btn"> View Project <i class="fas fa-link"></i> </a>
                 </div>
             </div>
-    
-            <div class="box">
+
+            <div class="box scroll-animation">
                 <div class="image">
                     <img src="images//Project Cover/Classcruiser.png" alt="Class Cruiser Cover Image">
                 </div>
@@ -213,128 +249,86 @@
     </section>
     <!-- trending section ends -->
 
-    <!--<section class="portfolio">
-
+    <!-- Certifications Section -->
+    <section class="certifications scroll-animation">
         <div class="section-header">
-            <h2>Brand Guidelines</h2>
+            <h2 style="color: white;">Certifications</h2>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    
         <div class="box-container">
-    
-            <div class="box">
-                <img src="images/Project Cover/GBLL Cover.png" alt="GBLL Brand Identity Guidlines">
+            <div class="box scroll-animation">
+                <img src="images/Certification/Certificate 1.png" alt="Certificate 1">
                 <div class="content">
-                    <h3>Green's Blue Light Lounge</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, praesentium.</p>
-                    <a href=""class="btn"> WIP <i class="fas fa-link"></i></a>
+                    <h3>Foundations of User Experience (UX) Design</h3>
+                    <p>Understand foundational concepts in UX design, such as user-centered design, the design process, accessibility, and equity-focused design. </p>
+                    <a href="https://coursera.org/share/765f0a7184cb01fc458b60db1470076c" class="btn">View Certificate <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
-            <div class="box">
-                <img src="images/Project Cover/Cover.png" alt="GBLL Brand Identity Guidlines">
+            <div class="box scroll-animation">
+                <img src="images/Certification/Certificate 2.png" alt="Certificate 2">
                 <div class="content">
-                    <h3>Main Space Designs</h3>
-                    <p>Personal Brand Case Study</p>
-                    <a href="https://www.behance.net/gallery/168845977/Main-Space-Designs"class="btn"> View Project <i class="fas fa-link"></i></a>
-                </div>
-        </section> -->
-
-        <!-- New Certification Section -->
-        <section class="certifications">
-            <div class="section-header">
-                <h2 style="color: white;">Certifications</h2>
-            </div>
-            <div class="box-container">
-                <div class="box">
-                    <img src="images/Certification/Certificate 1.png" alt="Certificate 1">
-                    <div class="content">
-                        <h3>Foundations of User Experience (UX) Design</h3>
-                        <p>Understand foundational concepts in UX design, such as user-centered design, the design process, accessibility, and equity-focused design. </p>
-                        <a href="https://coursera.org/share/765f0a7184cb01fc458b60db1470076c" class="btn">View Certificate <i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="images/Certification/Certificate 2.png" alt="Certificate 2">
-                    <div class="content">
-                        <h3>
-                            Marketing in a Digital World</h3>
-                        <p>Understand foundational concepts in Digital Marketing, including the Marketing Mix, Product Strategies, and Pricing Strategies, to develop effective marketing plans and achieve business goals.</p>
-                        <a href="https://coursera.org/share/3bdea613c9263f84918c7017f5489405" class="btn">View Certificate <i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
-                <!--3rd Certfication-->
-                <div class="box">
-                    <img src="images/Certification/Certificate 3.png" alt="Certificate 3">
-                    <div class="content">
-                        <h3>
-                            Digital Media and Marketing Principles</h3>
-                        <p>Understand foundational concepts in Mobile Marketing, Integrated Marketing Communications, Social Media, Digital Marketing, Marketing Channel</p>
-                        <a href="https://www.coursera.org/account/accomplishments/verify/K7T9U5TMPG2S?utm_source=link&utm_medium=certificate&utm_content=lih&utm_campaign=card_button" class="btn">View Certificate <i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
+                    <h3>Marketing in a Digital World</h3>
+                    <p>Understand foundational concepts in Digital Marketing, including the Marketing Mix, Product Strategies, and Pricing Strategies, to develop effective marketing plans and achieve business goals.</p>
+                    <a href="https://coursera.org/share/3bdea613c9263f84918c7017f5489405" class="btn">View Certificate <i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
-        </section>
+            <div class="box scroll-animation">
+                <img src="images/Certification/Certificate 3.png" alt="Certificate 3">
+                <div class="content">
+                    <h3>Digital Media and Marketing Principles</h3>
+                    <p>Understand foundational concepts in Mobile Marketing, Integrated Marketing Communications, Social Media, Digital Marketing, Marketing Channel</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/K7T9U5TMPG2S?utm_source=link&utm_medium=certificate&utm_content=lih&utm_campaign=card_button" class="btn">View Certificate <i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Certifications Section Ends -->
 
-        <!-- New Tools Section Header 
-
-        <section class="testimonials-header">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Tools I Use</h2>
-                </div>-->
-    <!-- New Tools Section -->
-
-    <section class="tools-section">
+    <!-- Tools Section -->
+    <section class="tools-section scroll-animation">
         <div class="container">
             <div class="tools-content-wrapper">
                 <div class="tools-content">
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/icon-1.png" alt="Tool 1">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/icon-2.png" alt="Tool 2">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/figma.png" alt="Tool 3">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/Premiere Pro Logo.png" alt="Tool 4">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/illustrator.png" alt="Tool 5">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/photoshop.png" alt="Tool 6">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/indesign (1).png" alt="Tool 7">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/Lightroom.png" alt="Tool 8">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/Davinci resolve.png" alt="Tool 9">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="Images/VS Code.png" alt="Tool 10">
                     </div>
-                    <div class="tool-image">
+                    <div class="tool-image scroll-animation">
                         <img src="images/Framer.png" alt="Tool 6">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Tools Section Ends -->
 
-    <!-- New Testimonials Header Section -->
-    <section class="testimonials-header">
+    <!-- Testimonials Header Section -->
+    <section class="testimonials-header scroll-animation">
         <div class="container">
             <div class="section-header">
                 <h2>Testimonials</h2>
@@ -344,8 +338,8 @@
             </div>
         </div>
     </section>
-    <!-- New Testimonials Section -->
-    <section class="testimonials-section">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section scroll-animation">
         <div class="container">
             <div class="testimonials-content">
                 <div class="avatar">
@@ -366,9 +360,10 @@
             </div>
         </div>
     </section>
+    <!-- Testimonials Section Ends -->
 
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="contact-section scroll-animation">
         <div class="contact-header">
             <h2>Contact Me</h2>
         </div>
@@ -387,10 +382,11 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
-    <footer>
+    <!-- Contact Section Ends -->
+
+    <footer class="scroll-animation">
         <p>&copy; 2024 Mainak Chakraborty</p>
     </footer>
-
 
     <!-- Password Modal -->
     <div id="passwordModal" class="modal">

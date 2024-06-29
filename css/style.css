@@ -20,7 +20,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background: #0d0d0d;
+  background: white;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -1044,8 +1044,9 @@ footer p {
 /* New Navbar */
 header {
   padding: 20px;
-  background-color: #F9F9F9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #007BFF;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 1000;
   position: fixed;
@@ -1072,7 +1073,7 @@ header {
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: white;
   font-family: 'Gagalin', cursive;
   padding: 20px 5px;
 }
@@ -1099,7 +1100,7 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-size: 16px;
   position: relative;
   transition: color 0.3s;
@@ -1114,7 +1115,7 @@ nav {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #007BFF;
+  background-color: white;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -1126,7 +1127,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #007BFF;
+  color: rgb(249, 84, 24);
 }
 
 .external-link-icon {

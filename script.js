@@ -77,3 +77,4 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initial check to apply animation if elements are already in view
     handleScrollAnimation();
 });
+

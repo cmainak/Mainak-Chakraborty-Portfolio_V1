@@ -123,7 +123,7 @@ section {
 }
 
 .navbar a i {
-  color: #1370fb;
+  color: white;
   padding-right: .5rem;
 }
 
@@ -1364,6 +1364,7 @@ nav {
     z-index: 1001; /* Ensure it stays above the dropdown menu */
     padding: 20px 0; /* Add padding for better spacing */
     margin-left: auto; /* Align it to the right */
+    color: white; /* Change the color to white */
   }
 
   /* Nav links in mobile view */
@@ -1391,6 +1392,7 @@ nav {
     padding: 20px 20px; /* Added padding for alignment */
     text-align: center; /* Center align the text */
     border-bottom: none; /* Removed the grey lines */
+    color: #333;
   }
 
   .nav-links a::before {

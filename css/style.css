@@ -1349,12 +1349,12 @@ footer p {
     width: 100%;
     position: fixed; /* Ensure the dropdown menu is fixed */
     top: 120px; /* Align it to the top of the viewport, bringing it down */
-    left: 20px;
+    left: 0px;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
     z-index: 1000;
     padding: 60px 0; /* Adjusted padding to create space from the top */
-    height: calc(100vh - 10vh); /* Ensure the dropdown covers the viewport height */
+    height: calc(100vh); /* Ensure the dropdown covers the viewport height */
     overflow-y: auto; /* Allow scrolling within the dropdown */
   }
 
@@ -1368,6 +1368,8 @@ footer p {
     text-align: center; /* Center align the text */
     border-bottom: none; /* Removed the grey lines */
     color: #333;
+    left: 20px;
+    top: 20px;
   }
 
   .nav-links a::before {

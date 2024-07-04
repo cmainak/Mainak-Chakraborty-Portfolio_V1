@@ -210,6 +210,62 @@ nav {
 }
 
 
+
+
+
+
+
+.image {
+  position: relative;
+  display: inline-block; /* Ensure the container fits the image */
+  margin-top: 20px; /* Add margin to separate from other elements */
+}
+
+.animated-border {
+  display: inline-block;
+  padding: 10px; /* Optional: Add padding around the image */
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Match the image style */
+  position: relative;
+  z-index: 1; /* Ensure the image stays on top */
+}
+
+.animated-border img {
+  width: 100%;
+  height: auto;
+  border-radius: inherit; /* Retain your image style */
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: inherit; /* Match the image style */
+  z-index: -1; /* Place behind the image */
+  border: 5px solid transparent; /* Initial border */
+  background: linear-gradient(90deg, #1370fb, #FFFFFF, #1370fb, #FFFFFF, #1370fb);
+  background-size: 400%;
+  animation: borderMove 4s linear infinite;
+}
+
+@keyframes borderMove {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+
+
+
+
+
+
+
 .home {
   display: -webkit-box;
   display: -ms-flexbox;

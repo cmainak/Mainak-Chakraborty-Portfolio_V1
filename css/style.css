@@ -1245,6 +1245,61 @@ footer p {
   background: #0056b3;
 }
 
+/* Gallery Section */
+.gallery {
+  padding: 16rem 11%;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 2rem;
+  color: #191919;
+  text-transform: uppercase;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
+  background: #f3f3f3;
+}
+
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Adjusts hover effect to the anchor tag */
+.gallery-item a:hover img {
+  transform: scale(1.1);
+}
+
+
+
 /* Media queries */
 
 @media (max-width: 1200px) {
@@ -1300,6 +1355,29 @@ footer p {
   .testimonial-box {
     padding: 20px;
   }
+
+  .gallery {
+    padding: 2rem;
+}
+
+.section-header {
+    font-size: 24px;
+}
+
+.gallery {
+  margin-top: 100px; /* Adjust this value as needed to create the desired gap */
+}
+
+/* Ensure the navbar has a higher z-index to stay on top of other elements */
+.header-container {
+  z-index: 1000;}
+
+.gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery-item {
+    padding-top: 140%; /* 1:1 Aspect Ratio for mobile */}
 
   /* CSS for scroll animations */
 .scroll-animation {
@@ -1396,6 +1474,8 @@ footer p {
   text-decoration: none;
   cursor: pointer;
 }
+
+
 
   
 

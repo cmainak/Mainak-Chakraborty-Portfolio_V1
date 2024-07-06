@@ -80,3 +80,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    const loadMoreButton = document.querySelector('.load-more');
+    const galleryContainer = document.querySelector('.gallery-container');
+
+    loadMoreButton.addEventListener('click', () => {
+        const newItems = `
+            <div class="gallery-item">
+                <a href="https://drive.google.com/your-link-4" target="_blank">
+                    <img src="images/GALLERY/photo4.jpg" alt="Photo 4">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="https://drive.google.com/your-link-5" target="_blank">
+                    <img src="images/GALLERY/photo5.jpg" alt="Photo 5">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="https://drive.google.com/your-link-6" target="_blank">
+                    <img src="images/GALLERY/photo6.jpg" alt="Photo 6">
+                </a>
+            </div>
+        `;
+        galleryContainer.insertAdjacentHTML('beforeend', newItems);
+        loadMoreButton.style.display = 'none'; // Hide the button after loading more items
+    });
+});
+
+

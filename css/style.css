@@ -1307,6 +1307,28 @@ footer p {
 
 
 
+.load-more-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.load-more-btn {
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  background-color: #1370fb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.load-more-btn:hover {
+  background-color:#0056b3;
+}
+
+
+
 /* Media queries */
 
 @media (max-width: 1200px) {

@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loadMoreBtn = document.getElementById('load-more-btn');
     const galleryContainer = document.getElementById('gallery-container');
-
     const images = [
-        { src: 'images/Gallery/Couple.jpg', alt: 'Photo 4', link: 'https://drive.google.com/your-link-4' },
-        { src: 'images/Gallery/Still-Life_1.jpg', alt: 'Photo 5', link: 'https://drive.google.com/your-link-5' },
-        { src: 'images/Gallery/Still-Life_1.jpg', alt: 'Photo 6', link: 'https://drive.google.com/your-link-6' },
-        { src: 'images/Gallery/photo7.jpg', alt: 'Photo 7', link: 'https://drive.google.com/your-link-7' },
-        { src: 'images/Gallery/photo8.jpg', alt: 'Photo 8', link: 'https://drive.google.com/your-link-8' },
-        { src: 'images/Gallery/photo9.jpg', alt: 'Photo 9', link: 'https://drive.google.com/your-link-9' },
+        { src: 'images/Gallery/Couple.jpg', alt: 'Photo 4' },
+        { src: 'images/Gallery/Still-Life_1.jpg', alt: 'Photo 5' },
+        { src: 'images/Gallery/Still-Life_1.jpg', alt: 'Photo 6' },
+        { src: 'images/Gallery/photo7.jpg', alt: 'Photo 7' },
+        { src: 'images/Gallery/photo8.jpg', alt: 'Photo 8' },
+        { src: 'images/Gallery/photo9.jpg', alt: 'Photo 9' },
         // Add more images here
     ];
 
@@ -26,12 +25,46 @@ document.addEventListener('DOMContentLoaded', () => {
             const galleryItem = document.createElement('div');
             galleryItem.className = 'gallery-item';
             galleryItem.innerHTML = `
-                <a href="${image.link}" target="_blank">
-                    <img src="${image.src}" alt="${image.alt}">
-                </a>
+                <img src="${image.src}" alt="${image.alt}" onclick="openModal(this)">
             `;
             galleryContainer.appendChild(galleryItem);
             currentImageIndex++;
+        }
+    });
+
+    // Modal functionality
+    let modalIndex;
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+    const captionText = document.getElementById("caption");
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+
+    window.openModal = function(img) {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+        modalIndex = Array.from(galleryImages).indexOf(img);
+    }
+
+    window.closeModal = function() {
+        modal.style.display = "none";
+    }
+
+    window.changeImage = function(direction) {
+        modalIndex += direction;
+        if (modalIndex >= galleryImages.length) {
+            modalIndex = 0;
+        } else if (modalIndex < 0) {
+            modalIndex = galleryImages.length - 1;
+        }
+        modalImg.src = galleryImages[modalIndex].src;
+        captionText.innerHTML = galleryImages[modalIndex].alt;
+    }
+
+    // Close the modal when clicking outside of the image
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
         }
     });
 });

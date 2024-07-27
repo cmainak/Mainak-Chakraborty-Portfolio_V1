@@ -45,72 +45,62 @@
         </header>
         <!-- navbar section ends -->
 
-        <!-- Gallery section starts -->
-        <section class="gallery">
-            <div class="section-header">
-               
-            </div>
-            
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-1" target="_blank">
-                        <img src="images/Galllery/Flip_2.jpg" alt="Photo 1">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-2" target="_blank">
-                        <img src="images/Galllery/Flip_1.jpg" alt="Photo 2">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-3" target="_blank">
-                        <img src="images/Galllery/Sunset_1.jpg" alt="Photo 3">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-3" target="_blank">
-                        <img src="images/Galllery/Wall_1.jpg" alt="Photo 4">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-3" target="_blank">
-                        <img src="images/Galllery/Shutter_1.jpg" alt="Photo 5">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-3" target="_blank">
-                        <img src="images/Galllery/Trees.JPG" alt="Photo 6">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-3" target="_blank">
-                        <img src="images/Galllery/Box-B&W.jpg" alt="Photo 7">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-3" target="_blank">
-                        <img src="images/Galllery/Box-B&W_1.jpg" alt="Photo 8">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-3" target="_blank">
-                        <img src="images/Galllery/Chips_1915.jpg" alt="Photo 8">
-                    </a>
-                </div>
-            
-                <!-- Add more gallery items as needed -->
-            </div>
-            <div class="load-more-container">
-                <button class="load-more-btn" id="load-more-btn">Load More</button>
-            </div>
-        </section>
-        
-    <!-- Gallery section ends -->
+       <!-- Gallery section starts -->
+<section class="gallery">
+    <div class="section-header">
+        <!-- You can add a heading here if needed -->
+    </div>
+    
+    <div class="gallery-container" id="gallery-container">
+        <!-- Your existing gallery items -->
+        <div class="gallery-item">
+            <img src="images/Galllery/Flip_2.jpg" alt="Photo 1" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Galllery/Flip_1.jpg" alt="Photo 2" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Galllery/Sunset_1.jpg" alt="Photo 3" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Galllery/Wall_1.jpg" alt="Photo 4" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Galllery/Shutter_1.jpg" alt="Photo 5" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Galllery/Trees.JPG" alt="Photo 6" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Galllery/Box-B&W.jpg" alt="Photo 7" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Galllery/Box-B&W_1.jpg" alt="Photo 8" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+            <img src="images/Galllery/Chips_1915.jpg" alt="Photo 9" onclick="openModal(this)">
+        </div>
+    </div>
+    <div class="load-more-container">
+        <button class="load-more-btn" id="load-more-btn">Load More</button>
+    </div>
+</section>
+<!-- Gallery section ends -->
 
-    <footer>
-        <p>&copy; 2024 Mainak Chakraborty</p>
-    </footer>
-    <script src="gallery.js"></script>
-    <script src="script.js"></script>
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="next" onclick="changeImage(1)">&#10095;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Mainak Chakraborty</p>
+</footer>
+<script src="gallery.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

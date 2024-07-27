@@ -1259,13 +1259,16 @@ footer p {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain; /* This will fit the image within the modal without distortion */
 }
 
 #caption {
@@ -1276,24 +1279,6 @@ footer p {
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
-}
-
-.modal-content, #caption {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
 }
 
 .close {
@@ -1341,6 +1326,12 @@ footer p {
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+
+
+
+
+
 .gallery {
   padding: 16rem 11%;
   background-color: #f9f9f9; /* Background color for the gallery section */

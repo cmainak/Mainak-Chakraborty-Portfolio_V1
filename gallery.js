@@ -1,71 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    const galleryContainer = document.querySelector('.gallery-container');
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const modal = document.getElementById('myModal');
+    const modalImg = document.getElementById('img01');
+    const captionText = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentIndex = 0;
 
-    const images = [
-        { src: 'images/Gallery/Couple.jpg', alt: 'Photo 4' },
-        { src: 'images/Gallery/Still-Life_1.jpg', alt: 'Photo 5' },
-        { src: 'images/Gallery/Still-Life_1.jpg', alt: 'Photo 6' },
-        { src: 'images/Gallery/photo7.jpg', alt: 'Photo 7' },
-        { src: 'images/Gallery/photo8.jpg', alt: 'Photo 8' },
-        { src: 'images/Gallery/photo9.jpg', alt: 'Photo 9' },
-        // Add more images here
-    ];
-
-    let currentImageIndex = 0;
-    const imagesPerLoad = 3;
-
-    loadMoreBtn.addEventListener('click', () => {
-        for (let i = 0; i < imagesPerLoad; i++) {
-            if (currentImageIndex >= images.length) {
-                loadMoreBtn.disabled = true;
-                loadMoreBtn.innerText = 'No More Images';
-                break;
-            }
-            const image = images[currentImageIndex];
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `
-                <img src="${image.src}" alt="${image.alt}">
-            `;
-            galleryContainer.appendChild(galleryItem);
-            currentImageIndex++;
-        }
-    });
-
-
-
-    // Modal functionality
-    let modalIndex;
-    const modal = document.getElementById("myModal");
-    const modalImg = document.getElementById("img01");
-    const captionText = document.getElementById("caption");
-    const galleryImages = document.querySelectorAll('.gallery-item img');
-
-    window.openModal = function(img) {
+    function openModal(img) {
         modal.style.display = "block";
         modalImg.src = img.src;
         captionText.innerHTML = img.alt;
-        modalIndex = Array.from(galleryImages).indexOf(img);
+        currentIndex = Array.from(galleryItems).indexOf(img);
     }
 
-    window.closeModal = function() {
+    function closeModal() {
         modal.style.display = "none";
     }
 
-    window.changeImage = function(direction) {
-        modalIndex += direction;
-        if (modalIndex >= galleryImages.length) {
-            modalIndex = 0;
-        } else if (modalIndex < 0) {
-            modalIndex = galleryImages.length - 1;
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex >= galleryItems.length) {
+            currentIndex = 0;
+        } else if (currentIndex < 0) {
+            currentIndex = galleryItems.length - 1;
         }
-        modalImg.src = galleryImages[modalIndex].src;
-        captionText.innerHTML = galleryImages[modalIndex].alt;
+        modalImg.src = galleryItems[currentIndex].src;
+        captionText.innerHTML = galleryItems[currentIndex].alt;
     }
 
-    // Close the modal when clicking outside of the image
-    modal.addEventListener('click', function(event) {
+    galleryItems.forEach(img => {
+        img.addEventListener('click', () => openModal(img));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', () => changeImage(-1));
+    nextBtn.addEventListener('click', () => changeImage(1));
+    modal.addEventListener('click', (event) => {
         if (event.target === modal) {
             closeModal();
         }

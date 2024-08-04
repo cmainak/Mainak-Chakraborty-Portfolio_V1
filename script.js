@@ -77,32 +77,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initial check to apply animation if elements are already in view
     handleScrollAnimation();
-
-    // Load more button functionality for gallery
-    const loadMoreButton = document.querySelector('.load-more');
-    const galleryContainer = document.querySelector('.gallery-container');
-
-    if (loadMoreButton && galleryContainer) {
-        loadMoreButton.addEventListener('click', () => {
-            const newItems = `
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-4" target="_blank">
-                        <img src="images/GALLERY/photo4.jpg" alt="Photo 4">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-5" target="_blank">
-                        <img src="images/GALLERY/photo5.jpg" alt="Photo 5">
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="https://drive.google.com/your-link-6" target="_blank">
-                        <img src="images/GALLERY/photo6.jpg" alt="Photo 6">
-                    </a>
-                </div>
-            `;
-            galleryContainer.insertAdjacentHTML('beforeend', newItems);
-            loadMoreButton.style.display = 'none'; // Hide the button after loading more items
-        });
-    }
 });

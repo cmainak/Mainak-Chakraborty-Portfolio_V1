@@ -5,45 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mainak Gallery Page</title>
-
-    <!-- font awesome cdn link  -->
+    <!-- Font Awesome CDN link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
+    <!-- Custom CSS file link -->
     <link rel="stylesheet" href="css/style.css">
-    
-
-    <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
-
-    <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
-
 </head>
+
 <body>
-    
-         <!-- navbar section starts -->
-         <header>
-            <div class="header-container">
-                <div class="logo-photo">
-                    <a href="home.html" class="logo-link">
-                        <img src="Images/MSD.png" alt="Logo" class="logo" style="height: 80px; width: auto;">
-                        <div class="logo-text" style="font-size: 18px; color: #fff; margin-top: 5px; font-family: 'Gagalin';">Main Space Designs</div>
-                    </a>
-                </div>
-                <nav>
-                    <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
-                    <ul class="nav-links">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="trending.html">Academic Projects</a></li>
-                        <li><a href="https://drive.google.com/file/d/1jE50ywkLIXHRRu0cfAXHVwBlt5G28MKE/view?usp=drive_link" target="_blank">Resume <img src="Images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
-                        </li>
-                        <li> <a href="gallery.html">Gallery</a>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+    <!-- Navbar section starts -->
+    <header>
+        <div class="header-container">
+            <div class="logo-photo">
+                <a href="home.html" class="logo-link">
+                    <img src="Images/MSD.png" alt="Logo" class="logo" style="height: 80px; width: auto;">
+                    <div class="logo-text" style="font-size: 18px; color: #fff; margin-top: 5px; font-family: 'Gagalin';">Main Space Designs</div>
+                </a>
             </div>
-        </header>
-        <!-- navbar section ends -->
+            <nav>
+                <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trending.html">Academic Projects</a></li>
+                    <li><a href="https://drive.google.com/file/d/1jE50ywkLIXHRRu0cfAXHVwBlt5G28MKE/view?usp=drive_link" target="_blank">Resume <img src="Images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Navbar section ends -->
+
 
        <!-- Gallery section starts -->
 <section class="gallery">
@@ -134,26 +125,25 @@
         <div class="gallery-item">
             <img src="images/Galllery/Final Presentation/Still Life/Still-Life_2.jpg" alt="Photo 9" onclick="openModal(this)">
         </div>
+
     </div>
-   
-    
 </section>
 <!-- Gallery section ends -->
 
 <!-- Modal Structure -->
-<div id="myModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <span class="prev" onclick="changeImage(-1)">&#10094;</span>
-    <span class="next" onclick="changeImage(1)">&#10095;</span>
-    <img class="modal-content" id="img01">
-    <div id="caption"></div>
-</div>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+        <a class="next" onclick="changeImage(1)">&#10095;</a>
+    </div>
 
 <footer>
     <p>&copy; 2024 Mainak Chakraborty</p>
 </footer>
-<script src="gallery.js"></script>
-<script src="script.js"></script>
 
+<script src="script.js"></script>
+    <script src="gallery.js"></script>
 </body>
 </html>

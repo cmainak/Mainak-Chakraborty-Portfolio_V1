@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loadMoreBtn = document.getElementById('load-more-btn');
-    const galleryContainer = document.getElementById('gallery-container');
+    const galleryContainer = document.querySelector('.gallery-container');
+
     const images = [
         { src: 'images/Gallery/Couple.jpg', alt: 'Photo 4' },
         { src: 'images/Gallery/Still-Life_1.jpg', alt: 'Photo 5' },
@@ -25,12 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const galleryItem = document.createElement('div');
             galleryItem.className = 'gallery-item';
             galleryItem.innerHTML = `
-                <img src="${image.src}" alt="${image.alt}" onclick="openModal(this)">
+                <img src="${image.src}" alt="${image.alt}">
             `;
             galleryContainer.appendChild(galleryItem);
             currentImageIndex++;
         }
     });
+
+
 
     // Modal functionality
     let modalIndex;

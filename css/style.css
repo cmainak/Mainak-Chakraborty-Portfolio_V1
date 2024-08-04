@@ -1224,7 +1224,13 @@ footer p {
 /* Gallery Section */
 .gallery {
   padding: 16rem 11%;
-  background-color: #f9f9f9; /* Background color for the gallery section */
+  background: url('../images/Smoke.jpeg') no-repeat center center;
+  background-size: cover; /* Ensures the entire image fits within the section */
+    background-position: center center;
+  
+  /* Referring to background.jpg in the same directory */
+  background-color: #f9f9f9; /* 
+  Background color for the gallery section */
 }
 
 .section-header {

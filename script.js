@@ -77,4 +77,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initial check to apply animation if elements are already in view
     handleScrollAnimation();
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const roles = ["UX Designer", "UX Researcher", "Graphic Designer", "Video Editor"];
+    let currentRoleIndex = 0;
+    const roleElement = document.querySelector(".text-animation span");
+
+    function changeRole() {
+        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+        roleElement.classList.remove("active");
+        
+        setTimeout(() => {
+            roleElement.textContent = roles[currentRoleIndex];
+            roleElement.classList.add("active");
+        }, 500); // Time to match the CSS transition duration
+    }
+
+    // Initialize with the first role
+    roleElement.textContent = roles[currentRoleIndex];
+    roleElement.classList.add("active");
+
+    // Change role every 5 seconds
+    setInterval(changeRole, 5000);
+});
+
 });

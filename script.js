@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initial check to apply animation if elements are already in view
     handleScrollAnimation();
 
-    document.addEventListener("DOMContentLoaded", function() {
+    // Text animation functionality
     const roles = ["UX Designer", "UX Researcher", "Graphic Designer", "Video Editor"];
     let currentRoleIndex = 0;
     const roleElement = document.querySelector(".text-animation span");
@@ -99,6 +99,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Change role every 5 seconds
     setInterval(changeRole, 5000);
-});
-
 });

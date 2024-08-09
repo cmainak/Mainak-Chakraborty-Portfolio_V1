@@ -153,6 +153,10 @@ nav {
   cursor: pointer;
 }
 
+.nav-links li a.active {
+  color: orange;
+}
+
 .nav-links {
   list-style: none;
   display: flex;

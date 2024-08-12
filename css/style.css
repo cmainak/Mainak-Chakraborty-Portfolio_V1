@@ -227,7 +227,7 @@ nav {
 .floating-element:nth-child(1) {
   width: 100px;
   height: 100px;
-  background-color: black; /* Red color */
+  background-color: #ffe5e5; /* Red color */
   top: 20px;
   left: -50px;
   animation-duration: 8s;
@@ -236,7 +236,7 @@ nav {
 .floating-element:nth-child(2) {
   width: 150px;
   height: 150px;
-  background-color: black; /* Blue color */
+  background-color: #ffe5e5; /* Blue color */
   top: 200px;
   left: -100px;
   animation-duration: 10s;
@@ -245,7 +245,7 @@ nav {
 .floating-element:nth-child(3) {
   width: 120px;
   height: 120px;
-  background-color: black; /* Blue color */
+  background-color: #ffe5e5;; /* Blue color */
   top: 100px;
   left: 200px;
   animation-duration: 12s;
@@ -1220,7 +1220,7 @@ footer p {
   padding: 5rem 9%; /* Matching padding with trending section */
   background: url('../images/Certification\ BG_2.jpg') no-repeat center center;
   background-size: cover; /* Ensures the image covers the entire section */
-  background: black;
+  background: #ffe5e5;
 }
 
 .certifications .section-header {
@@ -1267,7 +1267,7 @@ footer p {
 .certifications .box .btn {
   font-size: 1.5rem;
   color: #fff;
-  background: black;;
+  background: black;
   padding: 1rem 1.2rem;
   border-radius: 5rem;
   display: inline-block;

@@ -1236,6 +1236,7 @@ footer p {
   grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr)); /* Match the trending section grid */
   gap: 3rem;
   margin-bottom: 2rem;
+  padding: 1rem;
 }
 
 .certifications .box {
@@ -1244,6 +1245,7 @@ footer p {
   background: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
 }
 
 .certifications .box img {
@@ -1278,6 +1280,30 @@ footer p {
 
 .certifications .box .btn:hover {
   background: #FF9933;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.scroll-btn.left-btn {
+  left: 0;
+}
+
+.scroll-btn.right-btn {
+  right: 0;
+}
+
+.scroll-btn:hover {
+  background-color: #FF9933;
 }
 
 /* Gallery Section */

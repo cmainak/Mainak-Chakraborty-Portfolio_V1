@@ -99,4 +99,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Change role every 5 seconds
     setInterval(changeRole, 5000);
+
+    function scrollLeft() {
+        document.querySelector('.box-container').scrollBy({
+            left: -300,
+            behavior: 'smooth'
+        });
+    }
+    
+    function scrollRight() {
+        document.querySelector('.box-container').scrollBy({
+            left: 300,
+            behavior: 'smooth'
+        });
+    }
+    
 });

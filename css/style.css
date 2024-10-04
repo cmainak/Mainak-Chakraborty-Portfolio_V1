@@ -28,6 +28,46 @@ html::-webkit-scrollbar-thumb {
   border-radius: 80px;
 }
 
+/*Password Projects*/
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  position: relative; /* Needed for absolute positioning of the close button */
+}
+
+.close-button {
+  position: absolute; /* Position it relative to modal-content */
+  top: 10px;
+  right: 15px; /* Adjust as needed */
+  font-size: 24px; /* Increase size */
+  color: black; /* Change to a visible color */
+  background-color: transparent; /* No background */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.close-button:hover {
+  color: red; /* Change color on hover */
+}
+
+
 .logo-link {
   display: flex;
   align-items: center;

@@ -153,7 +153,15 @@
             </div>
             <div class="content">
                 <div class="icons">
-                    <a href="#" onclick="showPasswordPrompt('images/content/index.html')"> <i class="fas fa-calendar"></i> Spring, 2024 </a>
+                    <div id="password-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button" onclick="closeModal()">×</span>
+                            <h2>Enter Password</h2>
+                            <input type="password" id="password" placeholder="Enter Password">
+                            <button id="submit-password" onclick="validatePassword()">Submit</button>
+                        </div>
+                    </div>
+                     <i class="fas fa-calendar"></i> Spring, 2024 </a>
                     <a href="#" onclick="showPasswordPrompt('images/content/index.html')"> <i class="fas fa-user"></i> By Mainak</a>
                 </div>
                 <h3>Manage Wise</h3>
@@ -177,18 +185,32 @@
                 <a href="#" class="btn" onclick="showPasswordPrompt('SS/SS.html')"> View Project <i class="fas fa-link"></i> </a>
             </div>
         </div>
+
+
+
+
         <div class="box">
             <div class="image">
                 <img src="images//Project Cover/Cover.png" alt="Main Space Designs Cover Image">
             </div>
             <div class="content">
                 <div class="icons">
+                    <div id="password-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button" onclick="closeModal()">×</span>
+                            <h2>Enter Password</h2>
+                            <input type="password" id="password" placeholder="Enter Password">
+                            <button id="submit-password" onclick="validatePassword()">Submit</button>
+                        </div>
+                    </div>
+
                     <a href="#"> <i class="fas fa-calendar"></i> Spring, 2023 </a>
                     <a href="#"> <i class="fas fa-user"></i> By Mainak</a>
                 </div>
                 <h3>Main Space Design</h3>
                 <p>Personal Brand Case Study</p>
                 <p>Crafting intuitive, engaging, and innovative digital experiences that blend aesthetics with functionality. Transforming ideas into impactful user experiences</p>
+                
                 <a href="https://www.behance.net/gallery/168845977/Main-Space-Designs" class="btn" target="_blank"> View Project <i class="fa-solid fa-up-right-from-square"></i> </a>
             </div>
         </div>

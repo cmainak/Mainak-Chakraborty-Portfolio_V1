@@ -52,7 +52,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .close-button {
-  position: absolute; /* Position it relative to modal-content */
+  position: relative; /* Position it relative to modal-content */
   top: 10px;
   right: 15px; /* Adjust as needed */
   font-size: 24px; /* Increase size */
@@ -67,6 +67,7 @@ html::-webkit-scrollbar-thumb {
   color: red; /* Change color on hover */
 }
 
+/*Password Projects Ends*/
 
 .logo-link {
   display: flex;

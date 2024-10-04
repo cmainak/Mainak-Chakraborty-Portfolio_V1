@@ -9,6 +9,37 @@ document.addEventListener("DOMContentLoaded", function() {
         toolsContent.appendChild(clone);
     });
 
+     //Password Projects
+
+     function showPasswordPrompt(url) {
+        const modal = document.getElementById('password-modal');
+        modal.style.display = 'block'; // Show the modal
+    }
+    
+    function closeModal() {
+        const modal = document.getElementById('password-modal');
+        modal.style.display = 'none'; // Hide the modal
+    }
+    
+    function validatePassword() {
+        const password = document.getElementById('password').value;
+        if (password === '2747') {
+            // Redirect to the desired URL or perform the desired action
+            window.location.href = url;
+        } else {
+            alert('Incorrect Password. Please try again.');
+        }
+    }
+    
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById('password-modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+    
+
     const toolWidth = tools[0].offsetWidth + 20; // Include margin
     const totalWidth = toolWidth * tools.length;
     let translateX = 0;
@@ -114,35 +145,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    //Password Projects
-
-    function showPasswordPrompt(url) {
-        const modal = document.getElementById('password-modal');
-        modal.style.display = 'block'; // Show the modal
-    }
-    
-    function closeModal() {
-        const modal = document.getElementById('password-modal');
-        modal.style.display = 'none'; // Hide the modal
-    }
-    
-    function validatePassword() {
-        const password = document.getElementById('password').value;
-        if (password === 'your_password_here') {
-            // Redirect to the desired URL or perform the desired action
-            window.location.href = url;
-        } else {
-            alert('Incorrect Password. Please try again.');
-        }
-    }
-    
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-        const modal = document.getElementById('password-modal');
-        if (event.target === modal) {
-            closeModal();
-        }
-    };
-    
+   
     
 });

@@ -75,7 +75,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .logo {
-  height: 65px; /* Adjust the height as needed */
+  height: 45px; /* Adjust the height as needed */
   width: auto;
 }
 
@@ -1503,6 +1503,78 @@ footer p {
 
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* SLIDESHOW
+--------------------------------*/
+logo-slider {
+  --image-size: 300px;
+  padding: 20px;
+  overflow: hidden;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+logo-slider:hover div {
+  animation-play-state: paused;
+}
+logo-slider div {
+  display: flex;
+  position: relative;
+  animation: marquee 12s linear infinite;
+  justify-content: space-around;
+}
+logo-slider img {
+  display: block;
+  min-width: var(--image-size);
+  height: var(--image-size);
+  margin: 0 1vw;
+}
+logo-slider:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+@media (max-width: 900px) {
+  logo-slider {
+    --image-size: 150px;
+    --image-size: min(max(150px, 10vw), 150px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+#work .btn-get-started {
+  font-family: 'Gagalin', sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: 50px !important;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#work .btn-get-started:hover {
+  background: #8e5aff;
+  border: 2px solid #8e5aff;
 }
 
 /* Media queries */

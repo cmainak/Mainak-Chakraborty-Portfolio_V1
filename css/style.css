@@ -28,11 +28,13 @@ html::-webkit-scrollbar-thumb {
   border-radius: 80px;
 }
 
+/*----
+# Hero */
 
 #hero {
   width: 100%;
   height: 100vh;
-  background: url(../images/background.jpg) top center;
+  background: url(../images/Background\ Cover.png) top center;
   background-size: cover;
   position: relative;
 }
@@ -107,10 +109,14 @@ html::-webkit-scrollbar-thumb {
   border: 2px solid #00508e;
 }
 
-/*--------------------------------------------------------------
+/*----
+# Hero Ends */
+
+
+/*-----
 
 # Sections
---------------------------------------------------------------*/
+-----------*/
 section {
   overflow: hidden;
 }
@@ -177,7 +183,7 @@ section {
 }
 
 .logo {
-  height: 45px; /* Adjust the height as needed */
+  height: 60px; /* Adjust the height as needed */
   width: auto;
 }
 

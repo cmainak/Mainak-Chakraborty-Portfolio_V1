@@ -1,145 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mainak Academic Projects Page</title>
-
-    <!-- font awesome link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
-
-    <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
-
-    <link rel="icon" href="images/MSD.png" type="image/png">
-
-    <style>
-        /* Custom modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.5);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 300px;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        .modal-content input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .modal-content button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .modal-content button:hover {
-            background-color: #45a049;
-        }
-
-        .modal-content .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .modal-content .close:hover,
-        .modal-content .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
-
-    <script>
-        function showPasswordPrompt(url) {
-            document.getElementById("passwordModal").style.display = "flex";
-
-            document.getElementById("passwordSubmit").onclick = function() {
-                var password = document.getElementById("passwordInput").value;
-                if (password === "7474") {
-                    window.open(url);
-                } else {
-                    alert("Incorrect password.");
-                }
-            };
-        }
-
-        function closeModal() {
-            document.getElementById("passwordModal").style.display = "none";
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mainak Home Page</title>
+    
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+        <!-- custom css file link  -->
+        <link rel="stylesheet" href="css/style.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap" rel="stylesheet">
+    
+        <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
+    
+        <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
+    
+        <link rel="icon" href="images/MSD.png" type="image/png">
+    
+      
+        <script>
+            function showPasswordPrompt(url) {
+                document.getElementById("passwordModal").style.display = "flex";
+        
+                document.getElementById("passwordSubmit").onclick = function() {
+                    var password = document.getElementById("passwordInput").value;
+                    if (password === "7474") {
+                        window.location.href = url;
+                    } else {
+                        alert("Incorrect password.");
+                    }
+                };
+            }
+        
+            function closeModal() {
+                document.getElementById("passwordModal").style.display = "none";
+            }
+        
+            document.addEventListener("DOMContentLoaded", function() {
+                const scrollElements = document.querySelectorAll('.scroll-animation');
+        
+                const elementInView = (el, dividend = 1) => {
+                    const elementTop = el.getBoundingClientRect().top;
+        
+                    return (
+                        elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                    );
+                };
+        
+                const displayScrollElement = (element) => {
+                    element.classList.add('visible');
+                };
+        
+                const hideScrollElement = (element) => {
+                    element.classList.remove('visible');
+                };
+        
+                const handleScrollAnimation = () => {
+                    scrollElements.forEach((el) => {
+                        if (elementInView(el, 1.25)) {
+                            displayScrollElement(el);
+                        } else {
+                            hideScrollElement(el);
+                        }
+                    });
+                };
+        
+                window.addEventListener('scroll', () => {
+                    handleScrollAnimation();
+                });
+        
+                // Initial check to apply animation if elements are already in view
+                handleScrollAnimation();
             });
-        });
-    </script>
-</head>
+        </script>
+    </head>
 <body>
     
          <!-- navbar section starts -->
-    <header class="scroll-animation">
-        <div class="header-container">
-            <div class="logo-photo">
-                <a href="home.html" class="logo-link">
-                    <img src="Images/MSD.png" alt="Logo" class="logo" style="height: 95px; width: auto;">
-                    <div class="logo-text" style="font-size: 18px; color: #fff; margin-top: 5px; font-family: 'Gagalin';">      </div>
-                </a>
+         <header class="scroll-animation">
+            <div class="header-container">
+                <div class="logo-photo">
+                    <a href="home.html" class="logo-link">
+                        <img src="Images/MSD.png" alt="Logo" class="logo" style="height: 95px; width: auto;">
+                        <div class="logo-text" style="font-size: 18px; color: #fff; margin-top: 5px; font-family: 'Gagalin';"></div>
+                    </a>
+                </div>
+                <nav>
+                    <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+                    <ul class="nav-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="trending.html">Academic Projects</a></li>
+                        <li><a href="#" target="_blank">Resume</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
-                <ul class="nav-links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="trending.html" class="active">Academic Projects</a></li>
-                    <li><a href="https://drive.google.com/file/d/1jE50ywkLIXHRRu0cfAXHVwBlt5G28MKE/view?usp=drive_link" target="_blank">Resume <img src="Images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
-                    </li>
-                    <li> <a href="gallery.html">Gallery</a>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <script
-  src="https://app.10xlaunch.ai/widget"
-  data-app-id="fc4ccf6c-7447-4347-a296-f0a5158979ac"
-  async
-  defer
->
-</script>
-    </header>
+        </header>
     <!-- navbar section ends -->
 
 
@@ -310,6 +272,8 @@
 </div>
 
 <!-- blogs section ends -->
+<script src="script.js"></script>
+
 <footer>
     <p>&copy; 2024 Mainak Chakraborty</p>
 </footer>

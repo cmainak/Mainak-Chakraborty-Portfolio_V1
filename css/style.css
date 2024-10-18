@@ -242,7 +242,7 @@ section {
 
 /* New Navbar */
 header {
-  padding: 20px;
+  padding: 5px;
   background-color: black;
   color: #fff;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
@@ -260,7 +260,7 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* Added padding to align with the logo */
+  padding: 0 0px; /* Added padding to align with the logo */
 }
 
 .logo-photo {

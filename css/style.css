@@ -1813,8 +1813,8 @@ logo-slider:after {
   /* Mobile menu styles */
   .menu-toggle {
     display: block;
-    z-index: 1001; /* Ensure it stays above the dropdown menu */
-    padding: 20px 0; /* Add padding for better spacing */
+    z-index: 200; /* Ensure it stays above the dropdown menu */
+    padding: 30px; /* Add padding for better spacing */
     margin-left: auto; /* Align it to the right */
     color: white; /* Change the color to white */
   }

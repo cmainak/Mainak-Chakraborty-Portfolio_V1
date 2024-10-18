@@ -266,7 +266,6 @@ header {
 .logo-photo {
   display: flex;
   align-items: center;
-  size: 20px;
   gap: 20px;
 }
 

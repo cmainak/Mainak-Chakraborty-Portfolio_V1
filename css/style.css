@@ -136,6 +136,13 @@ section {
   padding-bottom: 50px !important;
 }
 
+.bottomline{
+  margin: auto;
+  max-width: 1080px;
+  height: 1px;
+  border-top: 1px solid grey;
+}
+
 /*Nwe Code Password Projects*/
 
 .modal {

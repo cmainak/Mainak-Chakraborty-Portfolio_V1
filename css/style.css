@@ -24,7 +24,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: black;
+  background: #064A78;
   border-radius: 80px;
 }
 
@@ -1691,10 +1691,7 @@ logo-slider:after {
   color: #fff;
 }
 
-#work .btn-get-started:hover {
-  background: #8e5aff;
-  border: 2px solid #8e5aff;
-}
+
 
 /* Media queries */
 

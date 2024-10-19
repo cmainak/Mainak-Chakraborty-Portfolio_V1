@@ -26,7 +26,7 @@
         <script>
             function showPasswordPrompt(url) {
                 document.getElementById("passwordModal").style.display = "flex";
-        
+    
                 document.getElementById("passwordSubmit").onclick = function() {
                     var password = document.getElementById("passwordInput").value;
                     if (password === "7474") {
@@ -36,30 +36,30 @@
                     }
                 };
             }
-        
+    
             function closeModal() {
                 document.getElementById("passwordModal").style.display = "none";
             }
-        
+    
             document.addEventListener("DOMContentLoaded", function() {
                 const scrollElements = document.querySelectorAll('.scroll-animation');
-        
+    
                 const elementInView = (el, dividend = 1) => {
                     const elementTop = el.getBoundingClientRect().top;
-        
+    
                     return (
                         elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
                     );
                 };
-        
+    
                 const displayScrollElement = (element) => {
                     element.classList.add('visible');
                 };
-        
+    
                 const hideScrollElement = (element) => {
                     element.classList.remove('visible');
                 };
-        
+    
                 const handleScrollAnimation = () => {
                     scrollElements.forEach((el) => {
                         if (elementInView(el, 1.25)) {
@@ -69,11 +69,11 @@
                         }
                     });
                 };
-        
+    
                 window.addEventListener('scroll', () => {
                     handleScrollAnimation();
                 });
-        
+    
                 // Initial check to apply animation if elements are already in view
                 handleScrollAnimation();
             });

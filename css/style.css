@@ -1733,7 +1733,7 @@ logo-slider:after {
 
   .nav-links.active {
     display: flex;
-    padding: 0 20px; /* Add padding for better spacing */
+    padding: 0 10px; /* Add padding for better spacing */
   }
 
   .nav-links a {
@@ -1813,7 +1813,7 @@ logo-slider:after {
 
   /* Ensure the navbar has a higher z-index to stay on top of other elements */
   .header-container {
-    z-index: 1000;
+    z-index: 999;
   }
 
   .gallery-container {

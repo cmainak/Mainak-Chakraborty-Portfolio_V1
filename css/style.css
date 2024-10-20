@@ -250,7 +250,7 @@ section {
 /* New Navbar */
 header {
   padding: 5px;
-  background-color: black;
+  background:linear-gradient(to right, #02437D, #000000);
   color: #fff;
   box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
   position: relative;
@@ -1122,7 +1122,7 @@ nav {
 /* Testimonials Section Styles */
 .testimonials-section {
   width: 100%;
-  background-color: #ffe5e5;
+  background: linear-gradient(to right, #02437D, #000000);
   padding: 50px; /* Set padding to 50px */
   display: flex;
   justify-content: center;
@@ -1338,7 +1338,7 @@ nav {
 
 .contact-form button {
   padding: 10px 20px;
-  background-color: black;
+  background: linear-gradient(to right, #02437D, #000000);
   color: white;
   border: none;
   cursor: pointer;
@@ -1347,7 +1347,7 @@ nav {
 }
 
 .contact-form button:hover {
-  background-color: #FF9933;
+  background:linear-gradient(to right,  #000000, #FF9933); 
 }
 
 .contact-form textarea {
@@ -1356,7 +1356,7 @@ nav {
 
 footer {
   width: 100%;
-  background-color: Black;
+  background:linear-gradient(to right, #02437D, #000000);
   padding: 20px 0; /* Equal padding on top and bottom */
   text-align: center;
   border-top: 1px solid white;
@@ -1384,13 +1384,14 @@ footer p {
   padding: 5rem 9%; /* Matching padding with trending section */
   background: url('../images/Certification\ BG_2.jpg') no-repeat center center;
   background-size: cover; /* Ensures the image covers the entire section */
-  background: #ffe5e5;
+  background: linear-gradient(to right, #02437D, #000000);
 }
 
 .certifications .section-header {
   text-align: center;
   font-size: 36px;
   margin-bottom: 30px;
+  color: #fff;
 }
 
 .certifications .box-container {
@@ -1437,11 +1438,11 @@ footer p {
   padding: 1rem 1.2rem;
   border-radius: 5rem;
   display: inline-block;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .certifications .box .btn:hover {
-  background: #FF9933;
+ background: linear-gradient(to right, #02437D, #000000);
 }
 
 .scroll-btn {

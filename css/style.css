@@ -985,7 +985,7 @@ nav {
 }
 
 .contact .row .info-container .share a:hover {
-  background: #FF9933;
+  background: linear-gradient(to right, #02437D, #000000);
 }
 
 .contact .row form {
@@ -1033,8 +1033,8 @@ nav {
 }
 
 .contact .row form .btn:hover {
-  background: #fff;
-  color: #191919;
+  background: linear-gradient(to right, #02437D, #000000);
+  color: #fff;
 }
 
 /* Tools Section Styles */
@@ -1434,11 +1434,12 @@ footer p {
 .certifications .box .btn {
   font-size: 1.5rem;
   color: #fff;
-  background: black;
   padding: 1rem 1.2rem;
   border-radius: 5rem;
   display: inline-block;
   transition: 0.3s ease;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: linear-gradient(to right, #02437D, #000000);
 }
 
 .certifications .box .btn:hover {
@@ -1466,7 +1467,7 @@ footer p {
 }
 
 .scroll-btn:hover {
-  background-color: #FF9933;
+  background: linear-gradient(to right, #02437D, #000000);
 }
 
 /* Gallery Section */
@@ -1534,7 +1535,7 @@ footer p {
 .load-more-btn {
   padding: 1rem 2rem;
   font-size: 1.6rem;
-  background-color: Black;
+  background: linear-gradient(to right, #02437D, #000000);
   color: #fff;
   border: none;
   border-radius: 5px;

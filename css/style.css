@@ -677,7 +677,7 @@ nav {
   line-height: 4.5rem;
   font-size: 1.7rem;
   border-radius: 50%;
-  background: black;
+  background: linear-gradient(to right, #02437D, #000000);
   color: white;
   text-align: center;
   position: absolute;
@@ -687,10 +687,10 @@ nav {
 
 .education .box-container .box span {
   font-size: 1.7rem;
-  color: black;
+  color: #fff;
   border-radius: 5rem;
   padding: .5rem 1.5rem;
-  background: #c4c4c4;
+  background: linear-gradient(to right, #02437D, #000000);
 }
 
 .education .box-container .box h3 {
@@ -1260,7 +1260,7 @@ nav {
   width: 100%;
   background-color: #ffffff;
   background-image: url('../images/footer\ MSD.png');
-  background-size:auto;
+  background-size:contain;
   background-repeat: no-repeat;
   padding: 50px 0px;
   display: flex;

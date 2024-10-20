@@ -1194,7 +1194,7 @@ nav {
 .emoji.check {
   bottom: -10px;
   right: -10px;
-  color: #28a745;
+  color: #fff;
 }
 
 @keyframes bounce {

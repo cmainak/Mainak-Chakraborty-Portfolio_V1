@@ -221,7 +221,7 @@ section {
   display: inline-block;
   margin-top: 1rem;
   border-radius: 5rem;
-  background: black;
+  background:linear-gradient(to right, #02437D, #000000);
   padding: .7rem;
   font-size: 1.7rem;
   color: white;
@@ -384,7 +384,7 @@ nav {
 .floating-element:nth-child(1) {
   width: 100px;
   height: 100px;
-  background-color: #ffe5e5; /* Red color */
+  background:#02437D;
   top: 20px;
   left: -50px;
   animation-duration: 8s;
@@ -393,7 +393,7 @@ nav {
 .floating-element:nth-child(2) {
   width: 150px;
   height: 150px;
-  background-color: #ffe5e5; /* Blue color */
+  background:#02437D;
   top: 200px;
   left: -100px;
   animation-duration: 10s;
@@ -402,7 +402,7 @@ nav {
 .floating-element:nth-child(3) {
   width: 120px;
   height: 120px;
-  background-color: #ffe5e5;; /* Blue color */
+  background:#02437D;
   top: 100px;
   left: 200px;
   animation-duration: 12s;

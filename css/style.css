@@ -791,6 +791,17 @@ nav {
   color: black;
 }
 
+
+.trending {
+  background: linear-gradient(to right, #02437D, #000000);
+}
+
+.section-header h2, .section-header p {
+  color: #FFFFFF; /* or color: white; */
+}
+.trending .heading h1{
+  color: #fff;
+}
 .trending .box-container {
   display: -ms-grid;
   display: grid;

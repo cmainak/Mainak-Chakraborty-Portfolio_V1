@@ -1,7 +1,7 @@
 /* General styles */
 * {
-  font-family: 'futura-pt', sans-serif;
-  font-family: 'futura-pt', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -78,7 +78,7 @@ html::-webkit-scrollbar-thumb {
   line-height: 100px;
   text-transform: uppercase;
   color: #fff;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: "Chakra Petch", sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -90,7 +90,7 @@ html::-webkit-scrollbar-thumb {
 
 
 #hero .btn-get-started {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
@@ -226,7 +226,7 @@ section {
   font-size: 1.7rem;
   color: white;
   padding-left: 2rem;
-  font-family: 'futura-pt';
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .btn i {
@@ -281,7 +281,7 @@ header {
   font-size: 34px;
   font-weight: bold;
   color: white;
-  font-family: 'futura-pt', cursive;
+  font-family: "Chakra Petch", sans-serif;
   padding: 20px 20px;
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }

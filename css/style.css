@@ -106,7 +106,7 @@ html::-webkit-scrollbar-thumb {
 
 #hero .btn-get-started:hover {
   background:linear-gradient(to right, #02437D, #000000);
-  border: 2px solid #00508e;
+  border: 2px solid #FF9933;
 }
 
 /*----

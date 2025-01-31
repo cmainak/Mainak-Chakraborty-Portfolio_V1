@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Case Studies</title>
+    
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+            <!-- custom css file link  -->
+            <link rel="stylesheet" href="css/style.css">
+    
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap" rel="stylesheet">
+            
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        
+        
+            <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
+        
+            <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
+        
+            <link rel="icon" href="images/MSD.png" type="image/png">
+    
+
+            <style>
+                /* Custom modal styles */
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0,0,0,0.5);
+                    align-items: center;
+                    justify-content: center;
+                }
+        
+                .modal-content {
+                    background-color: #fff;
+                    margin: auto;
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 80%;
+                    max-width: 300px;
+                    text-align: center;
+                    border-radius: 8px;
+                }
+        
+                .modal-content input[type="password"] {
+                    width: 100%;
+                    padding: 10px;
+                    margin: 10px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+        
+                .modal-content button {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+        
+                .modal-content button:hover {
+                    background-color: #45a049;
+                }
+        
+                .modal-content .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+        
+                .modal-content .close:hover,
+                .modal-content .close:focus {
+                    color: black;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+        
+                /* CSS for scroll animations */
+                .scroll-animation {
+                    opacity: 0;
+                    transform: translateY(50px);
+                    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                }
+        
+                .scroll-animation.visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            </style>
+
+      <script>
+          function showPasswordPrompt(url) {
+                document.getElementById("passwordModal").style.display = "flex";
+        
+                document.getElementById("passwordSubmit").onclick = function() {
+                    var password = document.getElementById("passwordInput").value;
+                    if (password === "7474") {
+                        window.location.href = url;
+                    } else {
+                        alert("Incorrect password.");
+                    }
+                }; 
+            } 
+        
+            function closeModal() {
+                document.getElementById("passwordModal").style.display = "none";
+            }
+
+        
+            document.addEventListener("DOMContentLoaded", function() {
+                const scrollElements = document.querySelectorAll('.scroll-animation');
+        
+                const elementInView = (el, dividend = 1) => {
+                    const elementTop = el.getBoundingClientRect().top;
+        
+                    return (
+                        elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                    );
+                };
+        
+                const displayScrollElement = (element) => {
+                    element.classList.add('visible');
+                };
+        
+                const hideScrollElement = (element) => {
+                    element.classList.remove('visible');
+                };
+        
+                const handleScrollAnimation = () => {
+                    scrollElements.forEach((el) => {
+                        if (elementInView(el, 1.25)) {
+                            displayScrollElement(el);
+                        } else {
+                            hideScrollElement(el);
+                        }
+                    });
+                };
+        
+                window.addEventListener('scroll', () => {
+                    handleScrollAnimation();
+                });
+        
+                // Initial check to apply animation if elements are already in view
+                handleScrollAnimation();
+            });
+        </script>
+   
+    </head>
+<body>
+    
+             <!-- navbar section starts -->
+    <header class="scroll-animation">
+        <div class="header-container">
+            <div class="logo-photo">
+                <a href="home.html" class="logo-link">
+                    <img src="Images/MSD.png" alt="Logo" class="logo" style="height: 95px; width: auto;">
+                    <div class="logo-text" style="font-size: 18px; color: #fff; margin-top: 5px;">Home      </div>
+                </a>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trending.html"class="active">Portfolio</a></li>
+                    <li><a href="" target="_blank">Resume <img src="images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
+                    </li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Navbar section ends -->
+
+
+<!-- PROJECT section starts  -->
+<section class="trending">
+    <h1 class="heading"> <span></span>PROJECTS</h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="images/Project Cover/Orbit Scan Cover.png" alt="Orbit Scan Cover Image">
+            </div>
+            <div class="content">
+                <div class="icons">
+                    <a href="#">
+                     <i class="fas fa-calendar"></i> Fall, 2024 </a>
+                     <a href="#">
+                     <i class="fas fa-user"></i> By Mainak</a>
+                </div>
+                <h3>Orbit Scan</h3>
+                <p>Orbit Scan Product Scanning App</p>
+                <p>OrbitScan is an app that scans food products, provides health and sustainability scores, suggests better alternatives, and rewards users for smarter choices.</p>
+                <a href="OS/OS.html" class="btn" target="_blank"> View Project <i class="fa fa-link"></i> </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/Project Cover/MW.png" alt="Manage Wise Design Cover Image">
+            </div>
+            <div class="content">
+                <div class="icons">
+                    <a href="#">
+                     <i class="fas fa-calendar"></i> Spring, 2024 </a>
+                     <a href="#">
+                     <i class="fas fa-user"></i> By Mainak</a>
+                </div>
+                <h3>Manage Wise</h3>
+                <p>Time Management & Productivity App</p>
+                <p>Originating from personal struggles, the project seeks to address time management and productivity challenges through innovative AI-driven solutions.</p>
+                <a href="MW/MW.html" class="btn" target="_blank"> View Project <i class="fa fa-link"></i> </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="images/Project Cover/ShowScout.png" alt="Show Scout Cover Image">
+            </div>
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-calendar"></i> Fall, 2023 </a>
+                    <a href="#"> <i class="fas fa-user"></i>By Mainak</a>
+                </div>
+                <h3>ShowScout</h3>
+                <p> Online Ticketing Platform </p>
+                <p> ShowScout, an online ticketing platform, is a comprehensive event hub. It simplifies ticketing and event discovery, covering movies, concerts, and sports</p>
+                <a href="SS/SS.html" class="btn" target="_blank"> View Project <i class="fa fa-link"></i> </a>
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="image">
+                <img src="images//Project Cover/Whatsapp.png" alt="WhatsApp Revamp Cover Image">
+            </div>
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-calendar"></i> Spring, 2023 </a>
+                    <a href="https://www.behance.net/gallery/170876433/WhatsApp-Revamped"> <i class="fas fa-user"></i>By Mainak</a>
+                </div>
+
+<!-- Password modal -->
+<div id="passwordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Enter Password</h2>
+        <input type="password" id="passwordInput" placeholder="Password">
+        <button id="passwordSubmit">Submit</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="gallery.js"></script>
+
+<footer>
+    <p>&copy; 2024 Mainak Chakraborty</p>
+</footer>
+</body>
+</html>

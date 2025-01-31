@@ -1,150 +1,129 @@
+// script.js
 document.addEventListener("DOMContentLoaded", function() {
-    // Tools slider functionality
+    // ======================
+    // Hamburger Menu Functionality
+    // ======================
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
+
+    // Toggle menu function
+    const toggleMenu = () => {
+        const isActive = navLinks.classList.toggle('active');
+        menuToggle.innerHTML = isActive ? '✕' : '&#9776;';
+        body.classList.toggle('menu-open', isActive);
+    };
+
+    // Close menu when clicking outside
+    const closeMenuOnClickOutside = (e) => {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            navLinks.classList.remove('active');
+            body.classList.remove('menu-open');
+            menuToggle.innerHTML = '&#9776;';
+        }
+    };
+
+    // Close menu on ESC key
+    const closeMenuOnEsc = (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            toggleMenu();
+        }
+    };
+
+    // Reset menu on desktop resize
+    const resetMenuOnDesktop = () => {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove('active');
+            body.classList.remove('menu-open');
+            menuToggle.innerHTML = '&#9776;';
+        }
+    };
+
+    // Event Listeners
+    menuToggle.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenuOnClickOutside);
+    document.addEventListener('keydown', closeMenuOnEsc);
+    window.addEventListener('resize', resetMenuOnDesktop);
+
+    // ======================
+    // Tools Slider
+    // ======================
     const toolsContent = document.querySelector('.tools-content');
     const tools = Array.from(document.querySelectorAll('.tool-image'));
-
-    // Clone the tool images to create a seamless loop
+    
+    // Clone tools for infinite loop
     tools.forEach(tool => {
         const clone = tool.cloneNode(true);
         toolsContent.appendChild(clone);
     });
 
-     //Password Projects
-
-     function showPasswordPrompt(url) {
-        const modal = document.getElementById('password-modal');
-        modal.style.display = 'block'; // Show the modal
-    }
-    
-    function closeModal() {
-        const modal = document.getElementById('password-modal');
-        modal.style.display = 'none'; // Hide the modal
-    }
-    
-    function validatePassword() {
-        const password = document.getElementById('password').value;
-        if (password === '2747') {
-            // Redirect to the desired URL or perform the desired action
-            window.location.href = url;
-        } else {
-            alert('Incorrect Password. Please try again.');
-        }
-    }
-    
-    // Close modal when clicking outside of it
-    window.onclick = function(event) {
-        const modal = document.getElementById('password-modal');
-        if (event.target === modal) {
-            closeModal();
-        }
-    };
-    
-
-    const toolWidth = tools[0].offsetWidth + 20; // Include margin
-    const totalWidth = toolWidth * tools.length;
     let translateX = 0;
-    const slideSpeed = 2; // Increase the speed
+    const toolWidth = tools[0].offsetWidth + 20;
+    const totalWidth = toolWidth * tools.length;
+    const slideSpeed = 2;
 
-    function slideTools() {
+    const animateTools = () => {
         translateX -= slideSpeed;
-        if (translateX <= -totalWidth) {
-            translateX = 0;
-        }
+        if (translateX <= -totalWidth) translateX = 0;
         toolsContent.style.transform = `translateX(${translateX}px)`;
-        requestAnimationFrame(slideTools);
-    }
+        requestAnimationFrame(animateTools);
+    };
+    animateTools();
 
-    slideTools();
-
-    // Hamburger menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        document.body.classList.toggle('menu-open'); // Toggle body class for no scroll
-    });
-
-    // Close menu when clicking outside of it
-    document.addEventListener('click', function(event) {
-        if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
-            navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-    });
-
-    // Scroll animations
+    // ======================
+    // Scroll Animations
+    // ======================
     const scrollElements = document.querySelectorAll('.scroll-animation');
-
-    const elementInView = (el, dividend = 1) => {
-        const elementTop = el.getBoundingClientRect().top;
-
-        return (
-            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-        );
-    };
-
-    const displayScrollElement = (element) => {
-        element.classList.add('visible');
-    };
-
-    const hideScrollElement = (element) => {
-        element.classList.remove('visible');
-    };
-
-    const handleScrollAnimation = () => {
-        scrollElements.forEach((el) => {
-            if (elementInView(el, 1.25)) {
-                displayScrollElement(el);
-            } else {
-                hideScrollElement(el);
-            }
+    
+    const checkScroll = () => {
+        scrollElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            elementTop <= window.innerHeight / 1.25 
+                ? el.classList.add('visible')
+                : el.classList.remove('visible');
         });
     };
 
-    window.addEventListener('scroll', () => {
-        handleScrollAnimation();
-    });
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Initial check
 
-    // Initial check to apply animation if elements are already in view
-    handleScrollAnimation();
+    // ======================
+    // Password Modal
+    // ======================
+    const passwordModal = document.getElementById('password-modal');
+    
+    window.showPasswordPrompt = (url) => {
+        passwordModal.style.display = 'block';
+        document.getElementById('password-submit').onclick = () => {
+            const password = document.getElementById('password-input').value;
+            if (password === '2747') window.location.href = url;
+            else alert('Incorrect password.');
+        };
+    };
 
-    // Text animation functionality
+    window.closeModal = () => {
+        passwordModal.style.display = 'none';
+    };
+
+    // ======================
+    // Text Animation (Optional)
+    // ======================
     const roles = ["UX Designer", "UX Researcher", "Graphic Designer", "Video Editor"];
     let currentRoleIndex = 0;
     const roleElement = document.querySelector(".text-animation span");
 
-    function changeRole() {
+    const updateRole = () => {
         currentRoleIndex = (currentRoleIndex + 1) % roles.length;
         roleElement.classList.remove("active");
-        
         setTimeout(() => {
             roleElement.textContent = roles[currentRoleIndex];
             roleElement.classList.add("active");
-        }, 500); // Time to match the CSS transition duration
+        }, 500);
+    };
+
+    if(roleElement) { // Only run if element exists
+        roleElement.textContent = roles[currentRoleIndex];
+        roleElement.classList.add("active");
+        setInterval(updateRole, 5000);
     }
-
-    // Initialize with the first role
-    roleElement.textContent = roles[currentRoleIndex];
-    roleElement.classList.add("active");
-
-    // Change role every 5 seconds
-    setInterval(changeRole, 5000);
-
-    function scrollLeft() {
-        document.querySelector('.box-container').scrollBy({
-            left: -300,
-            behavior: 'smooth'
-        });
-    }
-    
-    function scrollRight() {
-        document.querySelector('.box-container').scrollBy({
-            left: 300,
-            behavior: 'smooth'
-        });
-    }
-
-   
-    
 });

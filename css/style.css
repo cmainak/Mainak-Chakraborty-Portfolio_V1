@@ -1746,7 +1746,7 @@ logo-slider:after {
   /* Mobile menu styles */
   .menu-toggle {
     display: block;
-    z-index: 1000; /* Ensure it stays above the dropdown menu */
+    z-index: 1001; /* Ensure it stays above the dropdown menu */
     padding: 30px; /* Add padding for better spacing */
     margin-left: auto; /* Align it to the right */
     color: white; /* Change the color to white */
@@ -1769,6 +1769,7 @@ logo-slider:after {
   }
 
   .nav-links.active {
+    left:0;
     display: flex;
     padding: 0 10px; /* Add padding for better spacing */
   }

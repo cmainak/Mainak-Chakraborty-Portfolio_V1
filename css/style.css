@@ -1385,7 +1385,7 @@ nav {
 }
 
 .contact-form button:hover {
-  background:linear-gradient(to right,  #000000, #FF9933); 
+  background:linear-gradient(to right, #FF9933); 
 }
 
 .contact-form textarea {

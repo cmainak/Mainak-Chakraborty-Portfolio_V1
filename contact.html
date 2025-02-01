@@ -157,20 +157,28 @@
         <!-- Contact Form -->
         <form action="https://formsubmit.co/mainak,chak04@gmail.com" method="POST">
             <div class="inputBox">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="number" name="number" placeholder="Your Number" required>
+            <!-- Name field -->
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="number" name="number" placeholder="Your Number" required>
             </div>
-    
+            <!-- Email field -->
             <div class="inputBox">
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="text" name="subject" placeholder="Your Subject" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Your Subject" required>
             </div>
-    
+            <!-- Message field -->
             <textarea name="message" placeholder="Your Message" cols="30" rows="10" required></textarea>
-    
+
+            <!-- Security field to disable CAPTCHA -->
+            <input type="hidden" name="_captcha" value="false">
+        
+            <!-- Redirect to a thank-you page -->
+            <input type="hidden" name="_next" value="https://mainakstudiodesigns.netlify.app//thank-you.html">
+            <!-- Submit button -->
             <input type="submit" value="Send Message" class="btn">
         </form>
         <!-- Contact Form Ends -->
+        
         <br>
         <br>
         <br>

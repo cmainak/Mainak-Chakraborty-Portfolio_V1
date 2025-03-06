@@ -1073,26 +1073,12 @@ nav {
 }
 
 /* Tools Section Styles */
-
-.tools-header {
-  width: 100%;
-  padding: 50px 0;
-  background-color: #fff;
-  text-align: center; /* Center align text */
-  border-top: 1px solid #eaeaea;
-}
-
 .tools-section {
   width: 100%;
   background-color: white;
-  padding: 50px; /* Set padding to 50px */
+  padding: 50px;
   border-top: 1px solid #eaeaea;
-  text-align: center; /* Center align text */
-}
-
-.tools-slider {
-  overflow: hidden; /* Hide overflow to make the slider */
-  width: 100%;
+  text-align: center;
 }
 
 .tools-content-wrapper {
@@ -1102,15 +1088,14 @@ nav {
 
 .tools-content {
   display: flex;
-  transition: transform 0.1s linear; /* Adjust transition duration here */
-  will-change: transform;
-  padding: 0 20px; /* Adjust the padding for alignment */
+  animation: slide 20s linear infinite;
+  width: max-content;
 }
 
 .tool-image {
   flex: 0 0 auto;
-  width: 150px; /* Adjust width as needed */
-  margin: 0 10px; /* Adjust margin as needed */
+  width: 150px;
+  margin: 0 10px;
   background-color: white;
   border-radius: 10px;
   display: flex;
@@ -1122,6 +1107,11 @@ nav {
   width: 60%;
   height: auto;
   display: block;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Testimonials Header Section Styles */

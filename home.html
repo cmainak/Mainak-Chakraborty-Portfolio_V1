@@ -26,80 +26,22 @@
 
     <link rel="icon" href="Images/Logo/Logo2.svg" type="image/svg">
 
-   
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <script>
-        function showPasswordPrompt(url) {
-            document.getElementById("passwordModal").style.display = "flex";
-
-            document.getElementById("passwordSubmit").onclick = function() {
-                var password = document.getElementById("passwordInput").value;
-                if (password === "7474") {
-                    window.location.href = url;
-                } else {
-                    alert("Incorrect password.");
-                }
-            };
-        }
-
-        function closeModal() {
-            document.getElementById("passwordModal").style.display = "none";
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const scrollElements = document.querySelectorAll('.scroll-animation');
-
-            const elementInView = (el, dividend = 1) => {
-                const elementTop = el.getBoundingClientRect().top;
-
-                return (
-                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-                );
-            };
-
-            const displayScrollElement = (element) => {
-                element.classList.add('visible');
-            };
-
-            const hideScrollElement = (element) => {
-                element.classList.remove('visible');
-            };
-
-            const handleScrollAnimation = () => {
-                scrollElements.forEach((el) => {
-                    if (elementInView(el, 1.25)) {
-                        displayScrollElement(el);
-                    } else {
-                        hideScrollElement(el);
-                    }
-                });
-            };
-
-            window.addEventListener('scroll', () => {
-                handleScrollAnimation();
-            });
-
-            // Initial check to apply animation if elements are already in view
-            handleScrollAnimation();
-        });
-    </script>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0P9M74GT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WP0P9M74GT');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0P9M74GT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WP0P9M74GT');
+    </script>
 </head>
-
 
 <body>
     <!-- navbar section starts -->
@@ -107,19 +49,17 @@
         <div class="header-container">
             <div class="logo-photo">
                 <a href="home.html" class="logo-link">
-                    <img src="Images/Logo/Logo2.svg"loading="lazy" alt="Logo" class="logo"  style="height: 95px; width: auto;">
+                    <img src="Images/Logo/Logo2.svg" loading="lazy" alt="Logo" class="logo" style="height: 95px; width: auto;">
                     <div class="logo-text" style="font-size: 18px; color: #FF9933; margin-top: 5px;">   Home   </div>
                 </a>
             </div>
             <nav>
-                <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+                <button class="menu-toggle" aria-label="Open Menu">☰</button>
                 <ul class="nav-links">
                     <li><a href="about.html">About</a></li>
                     <li><a href="trending.html">Projects</a></li>
-                    <li><a href="" target="_blank">Resume <img src="images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
-                    </li>
-                    <li> <a href="gallery.html">Gallery</a>
-                    </li>
+                    <li><a href="" target="_blank">Resume <img src="images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -127,18 +67,17 @@
     </header>
     <!-- navbar section ends -->
 
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-      <div class="header-text">
-        <h1>MAINAK</h1>
-        <h1>CHAKRABORTY</h1>
-      </div>
-      <a href="https://www.linkedin.com/in/mainakc98/" class="btn-get-started">Connect
-    <i class="fab fa-linkedin"></i></a>
-    </div>
-  </section><!-- End Hero Section -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+            <div class="header-text">
+                <h1>MAINAK</h1>
+                <h1>CHAKRABORTY</h1>
+            </div>
+            <a href="https://www.linkedin.com/in/mainakc98/" class="btn-get-started">Connect
+            <i class="fab fa-linkedin"></i></a>
+        </div>
+    </section><!-- End Hero Section -->
 
     <!-- home section starts -->
     <section class="home scroll-animation">
@@ -150,16 +89,11 @@
                 <img src="images/MainakPF 2.png" loading="lazy" alt="Mainak Profile Picture">
             </div>
         </div>
-
-       
-
         <div class="content">
             <h3></h3>
-            <span>Mainak is a  UX & UI Designer, Researcher focused on building brands and creating digital experiences</span>
-
+            <span>Mainak is a UX & UI Designer, Researcher focused on building brands and creating digital experiences</span>
             <p>Beyond the screen, I enjoy staying active through sports and exercise, exploring new cuisines, unwinding with TV shows and movies, and quality time with family and friends.</p>
-         
-         <br>
+            <br>
             <a href="about.html" class="btn"> About Me <i class="fas fa-user"></i> </a>
         </div>
     </section>
@@ -173,19 +107,15 @@
             <h2 style="color: white;"> Student work</h2>
             <p style="color: white;">Collection of case study projects created while studying at TU</p>
         </div>
-        
         <div class="box-container">
             <div class="box">
                 <div class="image">
-                    <img src="images/Project Cover/Orbit Scan Cover.png" loading="lazy"
-                    alt="Orbit Scan Cover Image">
+                    <img src="images/Project Cover/Orbit Scan Cover.png" loading="lazy" alt="Orbit Scan Cover Image">
                 </div>
                 <div class="content">
                     <div class="icons">
-                        <a href="#">
-                         <i class="fas fa-calendar"></i> Fall, 2024 </a>
-                         <a href="#">
-                         <i class="fas fa-user"></i> By Mainak</a>
+                        <a href="#"><i class="fas fa-calendar"></i> Fall, 2024 </a>
+                        <a href="#"><i class="fas fa-user"></i> By Mainak</a>
                     </div>
                     <h3>Orbit Scan</h3>
                     <p>Orbit Scan Product Scanning App</p>
@@ -193,18 +123,14 @@
                     <a href="OS/OS.html" class="btn" target="_blank"> View Project <i class="fa fa-link"></i> </a>
                 </div>
             </div>
-
             <div class="box">
                 <div class="image">
-                    <img src="images/Project Cover/MW.png" loading="lazy" 
-                    alt="Manage Wise Design Cover Image">
+                    <img src="images/Project Cover/MW.png" loading="lazy" alt="Manage Wise Design Cover Image">
                 </div>
                 <div class="content">
                     <div class="icons">
-                        <a href="#">
-                         <i class="fas fa-calendar"></i> Spring, 2024 </a>
-                         <a href="#">
-                         <i class="fas fa-user"></i> By Mainak</a>
+                        <a href="#"><i class="fas fa-calendar"></i> Spring, 2024 </a>
+                        <a href="#"><i class="fas fa-user"></i> By Mainak</a>
                     </div>
                     <h3>Manage Wise</h3>
                     <p>Time Management & Productivity App</p>
@@ -212,188 +138,112 @@
                     <a href="MW/MW.html" class="btn" target="_blank"> View Project <i class="fa fa-link"></i> </a>
                 </div>
             </div>
-
- 
-                    </div>
-                    <br>
-
-                    <div class="load-more-container">
-                        <a href="casestudies.html" style="text-decoration: none;">
-                          <button id="load-more-btn" style="background-color: #FF9933; color: black; border: 10px 10px 10px 10px; padding: 10px 20px; cursor: pointer;">
-                            View More
-                          </button>
-                        </a>
-                      </div>
-    </section>
-        <!-- trending section ends -->
-<br>
-<br>
-<br>
-         
-    <!-- Video Showcase Section 
-    <section class="video-showcase">
-    <div class="section-header">
-        <h2>Video Editing Showcase</h2>
-        <p>Explore some of my video editing work.</p>
-    </div>
-    <div class="video-container">
-        <div class="video-item">
-            <video controls>
-                <source src="video/LOR_A6_.MainakChakraborty.mp4">
-                <track src="video/GOT.vtt" kind="captions" srclang="en" label="English">
-                Your browser does not support the video tag.
-            </video>
-            <p><b>Edited a multi-cam interview using B-roll footage to enhance the visual storytelling. Created a seamless flow between wide, full-body, and medium shots of the interviewee to maintain engagement and highlight key moments</b></p>
         </div>
-        <div class="video-item">
-            <video controls>
-                <source src="video/Parkour Cut_Mainak Chakraborty (1).mp4">
-                <track src="captions/Parkour_Cut_Mainak_Chakraborty.vtt" kind="captions" srclang="en" label="English">
-                Your browser does not support the video tag.
-            </video>
-            <p><b>Parkour Mini-Doc: Created a dynamic short doc featuring a parkour athlete discussing his career journey. Used interview time codes and curated music to craft a continuous narrative that captures his passion and evolution in parkour</b></p>
-        </div>
-
-    </div>
-</section>
--->
-
-    
-
-    <!-- Testimonials Header Section -->
-    <!--  <section class="testimonials-header scroll-animation">
-        <div class="container">
-          <div class="section-header">
-                <h2>Testimonials</h2>
-            </div>
-          
+        <br>
+        <div class="load-more-container">
+            <a href="casestudies.html" style="text-decoration: none;">
+                <button id="load-more-btn" style="background-color: #FF9933; color: black; border: 10px 10px 10px 10px; padding: 10px 20px; cursor: pointer;">
+                    View More
+                </button>
+            </a>
         </div>
     </section>
-   -->
+    <!-- trending section ends -->
+    <br><br><br>
 
     <!-- Gallery section starts -->
-
-        <section id="work">
-            <div class="container" data-aos="fade-up">
-              <div class="section-header">
+    <section id="work">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header">
                 <h2>SNAPSHOTS</h2>
                 <p>Just a fun mix of moments I captured on a whim</p>
             </div>
-                <div class="bottomline"></div>
-              </div>
-      
-       <!-- Slider -->
-        
- <logo-slider>
-    <div>
-      <img src="images/Galllery/B_1.jpg">
-      <img src="images/Galllery/Central Park Boating.jpg">
-      <img src="images/Galllery/Fireworks_3.jpg">
-      <img src="images/Galllery/Couple.jpg">
-      <img src="images/Galllery/Empire.jpg">
-      <img src="images/Galllery/Flip_1.jpg">
-      <img src="images/Galllery/Flip_2.jpg">
-      <img src="images/Galllery/Chips_1914.jpg">
-      <img src="images/Galllery/Sunset.jpg">
-      <img src="images/Galllery/Church_2100.jpg">
-      <img src="images/Galllery/DSC_1385_1.jpg">
-      <img src="images/Galllery/Light_moma.JPG">
-      <img src="images/Galllery/Lamp.jpg">
-      <img src="images/Galllery/Still-Life_2.jpg">
-      <img src="images/Galllery/Sunset_1.jpg">
-      <img src="images/Galllery/Trees.JPG">
-      <img src="images/Galllery/Shutter_1.jpg">
-      <img src="images/Galllery/Final Presentation/Night Photography/Fireworks_2.jpg">
-      <img src="images/Galllery/Wall_1.jpg">
-      <img src="images/Galllery/Final Presentation/Macro Photography/IMG_6561.jpg">
-      <img src="images/Galllery/ferry.JPG">
-      <img src="images/Galllery/DSC_1556.jpg">
-      <img src="images/Galllery/DSC_1385_1.jpg">
-   
-     </div>
-    
-     <div>
-        <img src="images/Galllery/B_1.jpg">
-        <img src="images/Galllery/Central Park Boating.jpg">
-        <img src="images/Galllery/Fireworks_3.jpg">
-        <img src="images/Galllery/Couple.jpg">
-        <img src="images/Galllery/Empire.jpg">
-        <img src="images/Galllery/Flip_1.jpg">
-        <img src="images/Galllery/Flip_2.jpg">
-        <img src="images/Galllery/Chips_1914.jpg">
-        <img src="images/Galllery/Sunset.jpg">
-        <img src="images/Galllery/Church_2100.jpg">
-        <img src="images/Galllery/DSC_1385_1.jpg">
-        <img src="images/Galllery/Light_moma.JPG">
-        <img src="images/Galllery/Lamp.jpg">
-        <img src="images/Galllery/Still-Life_2.jpg">
-        <img src="images/Galllery/Sunset_1.jpg">
-        <img src="images/Galllery/Trees.JPG">
-        <img src="images/Galllery/Shutter_1.jpg">
-        <img src="images/Galllery/Final Presentation/Night Photography/Fireworks_2.jpg">
-        <img src="images/Galllery/Wall_1.jpg">
-        <img src="images/Galllery/Final Presentation/Macro Photography/IMG_6561.jpg">
-        <img src="images/Galllery/ferry.JPG">
-        <img src="images/Galllery/DSC_1556.jpg">
-        <img src="images/Galllery/DSC_1385_1.jpg">
-       </div>
-  </logo-slider>
-            <!-- Add more gallery items as needed -->
-   
+            <div class="bottomline"></div>
         </div>
+        <logo-slider>
+            <div>
+                <img src="images/Galllery/B_1.jpg">
+                <img src="images/Galllery/Central Park Boating.jpg">
+                <img src="images/Galllery/Fireworks_3.jpg">
+                <img src="images/Galllery/Couple.jpg">
+                <img src="images/Galllery/Empire.jpg">
+                <img src="images/Galllery/Flip_1.jpg">
+                <img src="images/Galllery/Flip_2.jpg">
+                <img src="images/Galllery/Chips_1914.jpg">
+                <img src="images/Galllery/Sunset.jpg">
+                <img src="images/Galllery/Church_2100.jpg">
+                <img src="images/Galllery/DSC_1385_1.jpg">
+                <img src="images/Galllery/Light_moma.JPG">
+                <img src="images/Galllery/Lamp.jpg">
+                <img src="images/Galllery/Still-Life_2.jpg">
+                <img src="images/Galllery/Sunset_1.jpg">
+                <img src="images/Galllery/Trees.JPG">
+                <img src="images/Galllery/Shutter_1.jpg">
+                <img src="images/Galllery/Final Presentation/Night Photography/Fireworks_2.jpg">
+                <img src="images/Galllery/Wall_1.jpg">
+                <img src="images/Galllery/Final Presentation/Macro Photography/IMG_6561.jpg">
+                <img src="images/Galllery/ferry.JPG">
+                <img src="images/Galllery/DSC_1556.jpg">
+                <img src="images/Galllery/DSC_1385_1.jpg">
+            </div>
+            <div>
+                <img src="images/Galllery/B_1.jpg">
+                <img src="images/Galllery/Central Park Boating.jpg">
+                <img src="images/Galllery/Fireworks_3.jpg">
+                <img src="images/Galllery/Couple.jpg">
+                <img src="images/Galllery/Empire.jpg">
+                <img src="images/Galllery/Flip_1.jpg">
+                <img src="images/Galllery/Flip_2.jpg">
+                <img src="images/Galllery/Chips_1914.jpg">
+                <img src="images/Galllery/Sunset.jpg">
+                <img src="images/Galllery/Church_2100.jpg">
+                <img src="images/Galllery/DSC_1385_1.jpg">
+                <img src="images/Galllery/Light_moma.JPG">
+                <img src="images/Galllery/Lamp.jpg">
+                <img src="images/Galllery/Still-Life_2.jpg">
+                <img src="images/Galllery/Sunset_1.jpg">
+                <img src="images/Galllery/Trees.JPG">
+                <img src="images/Galllery/Shutter_1.jpg">
+                <img src="images/Galllery/Final Presentation/Night Photography/Fireworks_2.jpg">
+                <img src="images/Galllery/Wall_1.jpg">
+                <img src="images/Galllery/Final Presentation/Macro Photography/IMG_6561.jpg">
+                <img src="images/Galllery/ferry.JPG">
+                <img src="images/Galllery/DSC_1556.jpg">
+                <img src="images/Galllery/DSC_1385_1.jpg">
+            </div>
+        </logo-slider>
         <div class="load-more-container">
             <a href="gallery.html">
                 <button class="load-more-btn" id="load-more-btn">View More</button>
             </a>
-        
         </div>
     </section>
-
-   
     <!-- Gallery section ends -->
 
     <div class="bottomline"></div>
 
-    
-  <!-- Contact Section -->
-
-<section class="contact-section scroll-animation">
-   
-    <div class="contact-header">
-       
-        <h2>CONTACT ME</h2>
-    </div>
-    <br>
-
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/mainakc98/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:recipient@emainspacedesigns@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://medium.com/@cmainak98"><i class="fab fa-medium"></i></a>
-        <a href="https://www.behance.net/cmainak98/projects" target="_blank"><i class="fab fa-behance"></i></a>
-        <a href="https://www.instagram.com/mstudiodesignss/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-    
-    <form action="https://formsubmit.co/mainak.chak04@gmail.com" method="post" class="contact-form">
-        <!-- Name field -->
-        <input type="text" name="name" placeholder="Name" required>
-        
-        <!-- Email field -->
-        <input type="email" name="email" placeholder="Email" required>
-        
-        <!-- Message field -->
-        <textarea name="message" placeholder="Message" required></textarea>
-        
-        <!-- Security field to disable CAPTCHA -->
-        <input type="hidden" name="_captcha" value="false">
-        
-        <!-- Redirect to a thank-you page -->
-        <input type="hidden" name="_next" value="https://mainakchakraborty.netlify.app//thank-you.html">
-        
-        <!-- Submit button -->
-        <button type="submit">Send Message</button>
-    </form>
-</section>
-
+    <!-- Contact Section -->
+    <section class="contact-section scroll-animation">
+        <div class="contact-header">
+            <h2>CONTACT ME</h2>
+        </div>
+        <br>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/mainakc98/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:recipient@emainspacedesigns@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://medium.com/@cmainak98"><i class="fab fa-medium"></i></a>
+            <a href="https://www.behance.net/cmainak98/projects" target="_blank"><i class="fab fa-behance"></i></a>
+            <a href="https://www.instagram.com/mstudiodesignss/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <form action="https://formsubmit.co/mainak.chak04@gmail.com" method="post" class="contact-form">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://mainakchakraborty.netlify.app//thank-you.html">
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
     <!-- Contact Section Ends -->
 
     <footer class="scroll-animation">
@@ -403,14 +253,14 @@
     <!-- Password Modal -->
     <div id="passwordModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
+            <span class="close" onclick="closeModal()">×</span>
             <h2>Enter Password</h2>
             <input type="password" id="passwordInput" placeholder="Password">
             <button id="passwordSubmit">Submit</button>
         </div>
     </div>
     <!-- Password Modal ends -->
+
     <script src="script.js"></script>
-   
 </body>
 </html>

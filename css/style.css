@@ -27,7 +27,6 @@ html::-webkit-scrollbar-thumb {
   border-radius: 80px;
 }
 
-/* Remove padding-top from body to eliminate the white gap */
 body {
   background: white;
   display: flex;
@@ -42,8 +41,8 @@ body {
   background: url(../images/Cover\ Hero.png) top center;
   background-size: cover;
   position: relative;
-  top: 0; /* Ensure it starts at the top of the viewport */
-  margin-top: 0; /* Remove any default margin */
+  top: 0;
+  margin-top: 0;
 }
 
 @media (min-width: 1024px) {
@@ -73,7 +72,7 @@ body {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding-top: 120px; /* Add padding to push content below the header */
+  padding-top: 120px;
 }
 
 #hero .header-text {
@@ -278,7 +277,7 @@ header {
   left: 0;
   z-index: 1000;
   overflow: visible;
-  height: 100px; /* Fixed height for header */
+  height: 100px;
 }
 
 .header-container {
@@ -289,7 +288,7 @@ header {
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
-  height: 100%; /* Ensure it takes full header height */
+  height: 100%;
 }
 
 .logo-photo {
@@ -1073,6 +1072,116 @@ footer p {
   text-transform: uppercase;
 }
 
+/* Refined styles for gallery container and items */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns on desktop */
+  gap: 15px; /* Reduced gap for a tighter layout */
+  padding: 15px;
+  max-width: 1200px; /* Limit the width for larger screens */
+  margin: 0 auto; /* Center the grid */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  cursor: pointer; /* Indicate clickability */
+}
+
+.gallery-item:hover {
+  transform: scale(1.03); /* Smaller zoom on hover for subtlety */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+  display: block;
+  border-radius: 8px;
+}
+
+/* Modal styles for the gallery */
+#myModal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  max-height: 80vh; /* Limit height to avoid overflow */
+  object-fit: contain; /* Ensure the image fits within the modal */
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .load-more-container {
   text-align: center;
   margin-top: 2rem;
@@ -1095,14 +1204,14 @@ footer p {
 
 /* SLIDESHOW */
 logo-slider {
-  --image-size: 300px;
+  --image-size: 150px;
   padding: 20px;
   overflow: hidden;
   max-width: 1080px;
   width: 100%;
   margin: 0 auto;
   position: relative;
-  display: flex;
+  display: block;
 }
 
 logo-slider:hover div {
@@ -1113,14 +1222,15 @@ logo-slider div {
   display: flex;
   position: relative;
   animation: marquee 12s linear infinite;
-  justify-content: space-around;
+  white-space: nowrap;
 }
 
 logo-slider img {
-  display: block;
-  min-width: var(--image-size);
+  display: inline-block;
+  width: var(--image-size);
   height: var(--image-size);
   margin: 0 1vw;
+  object-fit: cover;
 }
 
 logo-slider:after {
@@ -1134,8 +1244,7 @@ logo-slider:after {
 
 @media (max-width: 900px) {
   logo-slider {
-    --image-size: 150px;
-    --image-size: min(max(150px, 10vw), 150px);
+    --image-size: 100px;
   }
 }
 
@@ -1168,10 +1277,28 @@ logo-slider:after {
   section {
     padding: 3rem 2rem;
   }
+
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+
+  .gallery-item img {
+    height: 250px; /* Slightly smaller height on mobile */
+  }
 }
 
 @media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+
+  .gallery-item img {
+    height: 200px; /* Even smaller height on very small screens */
   }
 }

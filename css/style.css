@@ -1755,7 +1755,11 @@ logo-slider:after {
   }
   .home .image,
     .home .content {
-        flex-basis: 100%; /* Take full width on mobile */
+        flex-basis: 10%; /* Take full width on mobile */
+    }
+
+    .home .image,{
+      flex-basis: 10%; /* Take full width on mobile */
     }
   .home .content h3 {
     font-size: 3rem;

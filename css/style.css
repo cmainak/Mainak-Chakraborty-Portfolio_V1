@@ -869,7 +869,7 @@ nav {
 }
 
 .trending {
-  background: linear-gradient(to right, #02437D, #000000);
+  background: #FFFFFF;
 }
 
 .section-header h2, .section-header p {
@@ -877,7 +877,7 @@ nav {
 }
 
 .trending .heading h1 {
-  color: #fff;
+  color: #000;
 }
 
 .trending .box-container {

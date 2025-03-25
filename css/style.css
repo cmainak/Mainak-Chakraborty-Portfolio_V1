@@ -505,6 +505,7 @@ nav {
   gap: 4rem;
   min-height: calc(100vh - 6.5rem);
   justify-content: center; /* Center items horizontally */
+
 }
 
 .home .image {

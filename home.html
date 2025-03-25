@@ -33,6 +33,57 @@
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+    <script>
+        function showPasswordPrompt(url) {
+            document.getElementById("passwordModal").style.display = "flex";
+            document.getElementById("passwordSubmit").onclick = function() {
+                var password = document.getElementById("passwordInput").value;
+                if (password === "7474") {
+                    window.location.href = url;
+                } else {
+                    alert("Incorrect password.");
+                }
+            };
+        }
+
+        function closeModal() {
+            document.getElementById("passwordModal").style.display = "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const scrollElements = document.querySelectorAll('.scroll-animation');
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+
+            const displayScrollElement = (element) => {
+                element.classList.add('visible');
+            };
+
+            const hideScrollElement = (element) => {
+                element.classList.remove('visible');
+            };
+
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    } else {
+                        hideScrollElement(el);
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+
+            handleScrollAnimation();
+        });
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0P9M74GT"></script>
     <script>

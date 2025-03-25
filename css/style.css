@@ -499,24 +499,17 @@ nav {
 }
 
 .home {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
   gap: 4rem;
   min-height: calc(100vh - 6.5rem);
+  justify-content: center; /* Center items horizontally */
 }
 
 .home .image {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 42rem;
-  flex: 1 1 42rem;
-  text-align: center;
-  padding-top: 120px;
+  flex: 1 1 300px; /* Adjust base width as needed */
+    text-align: center; /* Center the image within its container */
 }
 
 .home .image img {
@@ -526,9 +519,7 @@ nav {
 }
 
 .home .content {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 42rem;
-  flex: 1 1 42rem;
+ flex: 1 1 300px; /* Adjust base width as needed */
 }
 
 .home .content h3 {
@@ -1732,7 +1723,9 @@ logo-slider:after {
   transform: translateY(0);
 }
 
+
 /* Media queries */
+
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
@@ -1740,19 +1733,167 @@ logo-slider:after {
   section {
     padding: 3rem 2rem;
   }
-
-  .gallery-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-  }
 }
 
 @media (max-width: 768px) {
-  .gallery-container {
-    grid-template-columns: 1fr; /* 1 column on small screens */
+  .heading {
+    font-size: 12vw;
+  }
+  .navbar a i {
+    padding: 20px;
+  }
+  .navbar a span {
+    display: none;
+  }
+  .navbar a:hover {
+    padding-bottom: 2rem;
+  }
+  .home {
+    text-align: center;
+    gap: 2rem;
+    padding: 5rem 2rem; /* Adjust padding for mobile */
+  }
+  .home .image,
+    .home .content {
+        flex-basis: 100%; /* Take full width on mobile */
+    }
+  .home .content h3 {
+    font-size: 3rem;
   }
 
-  .gallery-item img {
-    height: 250px; /* Slightly smaller height on mobile */
+  .home .content {
+    text-align: center; /* Center content on mobile */
+}
+}
+  .home .content span {
+    font-size: 2.5rem;
+  }
+  .contact .row form .inputBox input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .testimonials-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center; /* Center the content horizontally */
+  }
+
+  .avatar {
+    margin-bottom: 20px; /* Add margin for spacing */
+  }
+
+  .testimonial-box {
+    padding: 20px;
+  }
+
+  .gallery {
+    padding: 2rem;
+  }
+
+  .section-header {
+    font-size: 24px;
+  }
+
+  .gallery {
+    margin-top: 100px; /* Adjust this value as needed to create the desired gap */
+  }
+
+  /* Ensure the navbar has a higher z-index to stay on top of other elements */
+  .header-container {
+    z-index: 1000;
+  }
+
+  .gallery-container {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .gallery-item {
+    padding-top: 140%; /* 1:1 Aspect Ratio for mobile */
+  }
+
+  /* CSS for scroll animations */
+  .scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-animation.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Parallax background CSS */
+  .parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+  }
+
+  .parallax::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Optional: Adds a dark overlay for better text readability */
+    z-index: -1;
+  }
+
+  /* Custom modal styles */
+  
+  /* Mobile menu styles */
+  .menu-toggle {
+    display: block;
+    z-index: 1001; /* Ensure it stays above the dropdown menu */
+    padding: 20px 0; /* Add padding for better spacing */
+    margin-left: auto; /* Align it to the right */
+    color: white; /* Change the color to white */
+  }
+
+  /* Nav links in mobile view */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: fixed; /* Ensure the dropdown menu is fixed */
+    top: 120px; /* Align it to the top of the viewport, bringing it down */
+    left: 0px;
+    background-color: white;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+    z-index: 1000;
+    padding: 60px 0; /* Adjusted padding to create space from the top */
+    height: calc(100vh); /* Ensure the dropdown covers the viewport height */
+    overflow-y: auto; /* Allow scrolling within the dropdown */
+  }
+
+  .nav-links.active {
+    display: flex;
+    padding: 0 20px; /* Add padding for better spacing */
+  }
+
+  .nav-links a {
+    padding: 20px 20px; /* Added padding for alignment */
+    text-align: center; /* Center align the text */
+    border-bottom: none; /* Removed the grey lines */
+    color: #333;
+    left: 20px;
+    top: 20px;
+  }
+
+  .nav-links a::before {
+    width: calc(100% - 40px); /* Adjust width to fit within the padding */
+    left: 50%; /* Center align the pseudo-element */
+    transform: translateX(-50%) scaleX(0); /* Center align and apply scaleX for animation */
+  }
+
+  .nav-links a:hover::before {
+    transform: translateX(-50%) scaleX(1); /* Apply centered scaleX for hover effect */
   }
 }
 
@@ -1760,9 +1901,9 @@ logo-slider:after {
   html {
     font-size: 50%;
   }
+}
 
   .gallery-item img {
     height: 200px; /* Even smaller height on very small screens */
   }
-}
 }

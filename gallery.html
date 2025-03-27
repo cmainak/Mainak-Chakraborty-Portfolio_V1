@@ -30,6 +30,10 @@
     
       
         <script>
+            /**
+             * Show the password prompt and redirect to the given URL if the correct password is entered.
+             * @param {string} url - The URL to redirect to if the correct password is entered.
+             */
             function showPasswordPrompt(url) {
                 document.getElementById("passwordModal").style.display = "flex";
         
@@ -85,6 +89,8 @@
             });
         </script>
 
+        
+
         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0P9M74GT"></script>
 <script>
@@ -111,7 +117,7 @@
                 <ul class="nav-links">
                     <li><a href="about.html">About</a></li>
                     <li><a href="trending.html">Projects</a></li>
-                    <li><a href="https://drive.google.com/file/d/1xaMnl052AOgAegzeMdwdwSfobyijATxs/view" target="_blank">Resume <img src="images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
+                    <li><a href="https://drive.google.com/file/d/14IIv9Vzt4kIycNLRbGPwd65RN7GH-wiR/view?usp=drive_link" target="_blank">Resume <img src="images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
                     </li>
                     <li><a href="gallery.html"class="active">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -261,14 +267,7 @@
 </section>
 <!-- Gallery section ends -->
 
-<!-- Modal Structure -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
-    </div>
+
 
 <footer>
     <p>No Copyright 2023 • Mainak Chakraborty</p>

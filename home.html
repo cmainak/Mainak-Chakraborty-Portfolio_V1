@@ -92,6 +92,72 @@
       gtag('js', new Date());
       gtag('config', 'G-WP0P9M74GT');
     </script>
+
+<style>
+           /* Footer Styles */
+           .footer-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+        }
+
+    
+
+        .footer-bottom {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-name {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links a:hover {
+            color: #ff6f00;
+        }
+
+        @media (max-width: 768px) {
+            .slider-item {
+                flex: 0 0 250px;
+            }
+
+            .footer-container {
+                padding: 0 1rem;
+            }
+
+            .footer-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -141,7 +207,7 @@
         </div>
         <div class="content">
             <h3></h3>
-            <span>Mainak is a UX & UI Designer, Researcher focused on building brands and creating digital experiences</span>
+            <span>Mainak is a Designer, Problem-Solver, & Sports Enthusiast</span>
             <p>Beyond the screen, I enjoy staying active through sports and exercise, exploring new cuisines, unwinding with TV shows and movies, and quality time with family and friends.</p>
             <br>
             <a href="about.html" class="btn"> About Me <i class="fas fa-user"></i> </a>
@@ -320,9 +386,22 @@
     </div>
     <!-- Password Modal ends -->
 
+    <!-- Footer Section -->
     <footer>
-        <p>No Copyright 2023 • Mainak Chakraborty</p>
-    </footer>
+        
+        <div class="footer-bottom">
+            <span class="footer-name">No Copyright 2023 • Mainak Chakraborty</span>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fas fa-balance-scale"></i> Balance</a>
+                <a href="#"><i class="fab fa-dribbble"></i> Dribbble</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
 
     <script src="script.js"></script>
 </body>

@@ -1,210 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Case Studies</title>
-    
-        <!-- font awesome cdn link  -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio with Slider & Footer</title>
     <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-
     <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
 
-    <link rel="icon" href="Images/Logo/Logo2.svg" type="image/svg">
+    <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="Images/Logo/Logo2.svg"type="image/svg">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #FFFFFF;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            margin: 40px auto;
+            max-width: 1200px;
+            overflow: hidden;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .slider-track {
+            display: flex;
+            animation: slide 20s linear infinite;
+        }
+
+        .slider-item {
+            flex: 0 0 300px;
+            margin: 0 10px;
+            background: f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.10s;
+        }
+
+        .slider-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px 10px 10Px 10px;
+        }
+
+        .slider-caption {
+            padding: 15px;
+            text-align: center;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Footer Styles */
+        .footer-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+            background: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+        }
+
     
 
-     
+        .footer-bottom {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
 
-      <script>
-          function showPasswordPrompt(url) {
-                document.getElementById("passwordModal").style.display = "flex";
-        
-                document.getElementById("passwordSubmit").onclick = function() {
-                    var password = document.getElementById("passwordInput").value;
-                    if (password === "7474") {
-                        window.location.href = url;
-                    } else {
-                        alert("Incorrect password.");
-                    }
-                }; 
-            } 
-        
-            function closeModal() {
-                document.getElementById("passwordModal").style.display = "none";
+        .footer-name {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links a:hover {
+            color: #ff6f00;
+        }
+
+        @media (max-width: 768px) {
+            .slider-item {
+                flex: 0 0 250px;
             }
 
-        
-            document.addEventListener("DOMContentLoaded", function() {
-                const scrollElements = document.querySelectorAll('.scroll-animation');
-        
-                const elementInView = (el, dividend = 1) => {
-                    const elementTop = el.getBoundingClientRect().top;
-        
-                    return (
-                        elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-                    );
-                };
-        
-                const displayScrollElement = (element) => {
-                    element.classList.add('visible');
-                };
-        
-                const hideScrollElement = (element) => {
-                    element.classList.remove('visible');
-                };
-        
-                const handleScrollAnimation = () => {
-                    scrollElements.forEach((el) => {
-                        if (elementInView(el, 1.25)) {
-                            displayScrollElement(el);
-                        } else {
-                            hideScrollElement(el);
-                        }
-                    });
-                };
-        
-                window.addEventListener('scroll', () => {
-                    handleScrollAnimation();
-                });
-        
-                // Initial check to apply animation if elements are already in view
-                handleScrollAnimation();
-            });
-        </script>
-        
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WP0P9M74GT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+            .footer-container {
+                padding: 0 1rem;
+            }
 
-  gtag('config', 'G-WP0P9M74GT');
-</script>
-    </head>
+            .footer-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
 <body>
     
+    
              <!-- navbar section starts -->
-    <header class="scroll-animation">
-        <div class="header-container">
-            <div class="logo-photo">
-                <a href="home.html" class="logo-link">
-                    <img src="Images/Logo/Logo2.svg"loading="lazy" alt="Logo" class="logo"  style="height: 95px; width: auto;">
-                    <div class="logo-text" style="font-size: 18px; color: #fff; margin-top: 5px;">Home      </div>
-                </a>
-            </div>
-            <nav>
-                <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
-                <ul class="nav-links">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="trending.html"class="active">Case Studies</a></li>
-                    <li><a href="https://drive.google.com/file/d/1cNIrYChSB44v-_CZLCSV5RHq2LL_XoHT/view?usp=sharing" target="_blank">Resume <img src="images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
-                    </li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!-- Navbar section ends -->
-
-
-<!-- PROJECT section starts  -->
-<section class="trending">
-    <h1 class="heading"> <span></span>PROJECTS</h1>
-    <div class="box-container">
-        <div class="box">
-            <div class="image">
-                <img src="images/Project Cover/Orbit Scan Cover.png" alt="Orbit Scan Cover Image">
-            </div>
-            <div class="content">
-                <div class="icons">
-                    <a href="#">
-                     <i class="fas fa-calendar"></i> Fall, 2024 </a>
-                     <a href="#">
-                     <i class="fas fa-user"></i> By Mainak</a>
+             <header class="scroll-animation">
+                <div class="header-container">
+                    <div class="logo-photo">
+                        <a href="home.html" class="logo-link">
+                            <img src="Images/Logo/Logo2.svg"loading="lazy" alt="Logo" class="logo"  style="height: 95px; width: auto;">
+                            <div class="logo-text" style="font-size: 18px; color: #fff; margin-top: 5px;">Home      </div>
+                        </a>
+                    </div>
+                    <nav>
+                        <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
+                        <ul class="nav-links">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="trending.html"class="active">Projects</a></li>
+                            <li><a href="https://drive.google.com/file/d/1cNIrYChSB44v-_CZLCSV5RHq2LL_XoHT/view?usp=sharing" target="_blank">Resume <img src="images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <h3>Orbit Scan</h3>
-                <p>Orbit Scan Product Scanning App</p>
-                <p>OrbitScan is an app that scans food products, provides health and sustainability scores, suggests better alternatives, and rewards users for smarter choices.</p>
-                <a href="OS/OS.html" class="btn" target="_blank"> View Project <i class="fa fa-link"></i> </a>
-            </div>
-        </div>
+            </header>
+            <!-- Navbar section ends -->
 
-        <div class="box">
-            <div class="image">
-                <img src="images/Project Cover/MW.png" alt="Manage Wise Design Cover Image">
+
+
+
+
+
+    <!-- Slider Section -->
+    <div class="slider-container">
+        <div class="slider-track">
+            <div class="slider-item">
+                <img src="images/AIRPLANE.jpg" alt="Project 1" class="slider-image">
+               
             </div>
-            <div class="content">
-                <div class="icons">
-                    <a href="#">
-                     <i class="fas fa-calendar"></i> Spring, 2024 </a>
-                     <a href="#">
-                     <i class="fas fa-user"></i> By Mainak</a>
+            <div class="slider-item">
+                <img src="images/MoviePoster.jpg" alt="Project 2" class="slider-image">
+            
                 </div>
-                <h3>Manage Wise</h3>
-                <p>Time Management & Productivity App</p>
-                <p>Originating from personal struggles, the project seeks to address time management and productivity challenges through innovative AI-driven solutions.</p>
-                <a href="MW/MW.html" class="btn" target="_blank"> View Project <i class="fa fa-link"></i> </a>
             </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="images/Project Cover/ShowScout.png" alt="Show Scout Cover Image">
-            </div>
-            <div class="content">
-                <div class="icons">
-                    <a href="#"> <i class="fas fa-calendar"></i> Fall, 2023 </a>
-                    <a href="#"> <i class="fas fa-user"></i>By Mainak</a>
+            <div class="slider-item">
+                <img src="" alt="Project 3" class="slider-image">
+             
                 </div>
-                <h3>ShowScout</h3>
-                <p> Online Ticketing Platform </p>
-                <p> ShowScout, an online ticketing platform, is a comprehensive event hub. It simplifies ticketing and event discovery, covering movies, concerts, and sports</p>
-                <a href="SS/SS.html" class="btn" target="_blank"> View Project <i class="fa fa-link"></i> </a>
+            </div>
+            <!-- Duplicate items for seamless loop -->
+            <div class="slider-item">
+                <img src="image1.jpg" alt="Project 1" class="slider-image">
+                <div class="slider-caption">
+                    <h3>Project One</h3>
+                </div>
+            </div>
+            <div class="slider-item">
+                <img src="image2.jpg" alt="Project 2" class="slider-image">
+                <div class="slider-caption">
+                    <h3>Project Two</h3>
+                </div>
             </div>
         </div>
-
-        <br>
-
-        <div class="load-more-container">
-            <a href="trending.html" style="text-decoration: none;">
-                <button id="load-more-btn" style="background-color: #FF9933; color: black; border: 10px 10px 10px 10px; padding: 10px 20px; cursor: pointer;">
-                See All Projects
-              </button>
-            </a>
-          </div>
-        
-        </div>
-
-   
-       
-
-<!-- Password modal -->
-<div id="passwordModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Enter Password</h2>
-        <input type="password" id="passwordInput" placeholder="Password">
-        <button id="passwordSubmit">Submit</button>
     </div>
-</div>
 
-<script src="script.js"></script>
-<script src="gallery.js"></script>
+    <!-- contact section starts -->
+<section class="contact">
+    <h1 class="heading" style="color: #fff;"> Contact Me </h1>
+    
+    <div class="row">
+        <div class="info-container">
+            <h1>Get in touch</h1>
+            <p>For more work inquiries, or just want to hangout? Send me over a message, and let's chat</p>
+            <div class="box-container">
+                <div class="box">
+                    <i class="fas fa-map"></i>
+                    <div class="info">
+                        <h3>Address :</h3>
+                        <p>New Haven,CT</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info">
+                        <h3>Email :</h3>
+                        <p>mainspacedesigns@gmail.com</p>
+                        <p>mainak.chak04@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="share">
+                <a href="https://www.linkedin.com/in/mainakc98/" class="fab fa-linkedin"></a>
+                <a href="https://medium.com/@cmainak98" class="fab fa-medium"></a>
+                <a href="https://www.behance.net/cmainak98/projects" class="fa-brands fa-behance"></a>
+                <a href="https://www.instagram.com/mstudiodesignss/" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    
+        <!-- Contact Form -->
+        <form action="https://formsubmit.co/mainak.chak04@gmail.com" method="POST">
+            <div class="inputBox">
+                <!-- Name field -->
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="number" name="number" placeholder="Your Number" required>
+            </div>
+            <!-- Email field -->
+            <div class="inputBox">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Your Subject" required>
+            </div>
+            <!-- Message field -->
+            <textarea name="message" placeholder="Your Message" cols="30" rows="10" required></textarea>
+            <!-- Security field to disable CAPTCHA -->
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Redirect to a thank-you page -->
+            <input type="hidden" name="_next" value="https://mainakchakraborty.netlify.app//thank-you.html">
+            <!-- Submit button -->
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+        <!-- Contact Form Ends -->
+        
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/mstudiodesignss/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            <!-- Instagram embed code remains unchanged -->
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+    </div>
+</section>
 
-<footer>
-    <p>No Copyright 2023 • Mainak Chakraborty</p>
-</footer>
+    <!-- Footer Section -->
+    <footer>
+        
+            <div class="footer-bottom">
+                <span class="footer-name">Mainak Chakraborty</span>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fas fa-balance-scale"></i> Balance</a>
+                    <a href="#"><i class="fab fa-dribbble"></i> Dribbble</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Slider Interaction
+        const sliderTrack = document.querySelector('.slider-track');
+        
+        sliderTrack.addEventListener('mouseenter', () => {
+            sliderTrack.style.animationPlayState = 'paused';
+        });
+
+        sliderTrack.addEventListener('mouseleave', () => {
+            sliderTrack.style.animationPlayState = 'running';
+        });
+    </script>
 </body>
 </html>

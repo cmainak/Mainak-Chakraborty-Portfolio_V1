@@ -3,300 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio with Slider & Footer</title>
-    <!-- custom css file link  -->
+    <title>UX Case Study - Orbit Scan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
-    <link href="https://fonts.cdnfonts.com/css/gagalin" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/1a6d379c1b.js" crossorigin="anonymous"></script>
-
-    <link rel="icon" href="Images/Logo/Logo2.svg"type="image/svg">
-
     <style>
-        /* Reset and Base Styles */
+        /* Base Styles */
+        :root {
+            --primary: #0C4700;
+            --secondary: #FF9933;
+            --text: #333333;
+            --background: #F8F9FA;
+            --tertiary: #0C4700;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            background-color: #FFFFFF;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
         }
 
-        /* Slider Styles */
-        .slider-container {
-            margin: 40px auto;
+        .home-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.9);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .home-button i {
+    color: #333;
+    font-size: 1.4rem;
+  }
+
+  .home-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+        /* Case Study Navigation */
+        .case-nav {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .case-nav a {
+            display: block;
+            width: 12px;
+            height: 12px;
+            margin: 15px 0;
+            background: rgba(0,0,0,0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .case-nav a.active {
+            background: var(--primary);
+            transform: scale(1.4);
+        }
+
+        /* Hero Section */
+        .case-hero {
+            padding: 120px 0 60px;
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-content {
             max-width: 1200px;
-            overflow: hidden;
-            position: relative;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        .slider-track {
-            display: flex;
-            animation: slide 20s linear infinite;
-        }
-
-        .slider-item {
-            flex: 0 0 300px;
-            margin: 0 10px;
-            background: f5f5f5;
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.10s;
         }
 
-        .slider-item:hover {
+        /* Section Styles */
+        .case-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            background: var(--tertiary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+        }
+
+        /* Research Insights */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .insight-card {
+            padding: 30px;
+            background: white;
+            border-left: 4px solid var(--secondary);
+            border-radius: 4px;
+        }
+
+        /* Image Section */
+        .image-section {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .case-image {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 0px;
+            box-shadow: 0 4px 20px rgba(F,F,F,F,F,F,F);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .image-caption {
+            margin-top: 20px;
+            color: var(--text);
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        /* Design Showcase */
+        .design-showcase {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .design-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .design-image:hover {
             transform: translateY(-5px);
         }
 
-        .slider-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px 10px 10Px 10px;
-        }
-
-        .slider-caption {
-            padding: 15px;
-            text-align: center;
-        }
-
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Footer Styles */
-        .footer-container {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            text-align: center;
-            background: white;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
-        }
-
-    
-
-        .footer-bottom {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .footer-name {
-            font-size: 1.2rem;
-            color: #fff;
-            font-weight: 500;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .social-links a:hover {
-            color: #ff6f00;
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .slider-item {
-                flex: 0 0 250px;
+            .case-nav {
+                display: none;
             }
 
-            .footer-container {
-                padding: 0 1rem;
+            .section-header h2 {
+                font-size: 2rem;
             }
 
-            .footer-header h2 {
-                font-size: 1.5rem;
+            .case-section {
+                padding: 60px 20px;
             }
+
+            .home-button {
+      width: 40px;
+      height: 40px;
+    }
+    .home-button i {
+      font-size: 1.2rem;
+    }
         }
     </style>
 </head>
 <body>
-    
-    
-             <!-- navbar section starts -->
-             <header class="scroll-animation">
-                <div class="header-container">
-                    <div class="logo-photo">
-                        <a href="home.html" class="logo-link">
-                            <img src="Images/Logo/Logo2.svg"loading="lazy" alt="Logo" class="logo"  style="height: 95px; width: auto;">
-                            <div class="logo-text" style="font-size: 18px; color: #fff; margin-top: 5px;">Home      </div>
-                        </a>
-                    </div>
-                    <nav>
-                        <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
-                        <ul class="nav-links">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="trending.html"class="active">Projects</a></li>
-                            <li><a href="https://drive.google.com/file/d/1cNIrYChSB44v-_CZLCSV5RHq2LL_XoHT/view?usp=sharing" target="_blank">Resume <img src="images/externall icon.png" alt="External Link Icon" class="external-link-icon"></a>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
+
+    <a href="home.html" class="home-button">
+        <i class="fas fa-home"></i>
+      </a>
+    <!-- Case Study Navigation -->
+    <nav class="case-nav">
+        <a href="#overview" class="active"></a>
+        <a href="#uxstudysequence"></a>
+        <a href="#research"></a>
+        <a href="#design"></a>
+        <a href="#outcome"></a>
+        <a href="#outcome"></a>
+        <a href="#outcome"></a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="case-hero">
+        <div class="hero-content">
+            <h1>A Complete Solution for Smarter, Healthier Product Choices</h1>
+            <div class="project-meta">
+                <div>
+                    <h4>Role</h4>
+                    <p>UX Designer & Researcher</p>
                 </div>
-            </header>
-            <!-- Navbar section ends -->
-
-
-
-
-
-
-    <!-- Slider Section -->
-    <div class="slider-container">
-        <div class="slider-track">
-            <div class="slider-item">
-                <img src="images/AIRPLANE.jpg" alt="Project 1" class="slider-image">
-               
-            </div>
-            <div class="slider-item">
-                <img src="images/MoviePoster.jpg" alt="Project 2" class="slider-image">
-            
+                <div>
+                    <h4>Duration</h4>
+                    <p>8 Weeks</p>
                 </div>
-            </div>
-            <div class="slider-item">
-                <img src="" alt="Project 3" class="slider-image">
-             
-                </div>
-            </div>
-            <!-- Duplicate items for seamless loop -->
-            <div class="slider-item">
-                <img src="image1.jpg" alt="Project 1" class="slider-image">
-                <div class="slider-caption">
-                    <h3>Project One</h3>
-                </div>
-            </div>
-            <div class="slider-item">
-                <img src="image2.jpg" alt="Project 2" class="slider-image">
-                <div class="slider-caption">
-                    <h3>Project Two</h3>
+                <div>
+                    <h4>Team</h4>
+                    <p>Individual</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- contact section starts -->
-<section class="contact">
-    <h1 class="heading" style="color: #fff;"> Contact Me </h1>
-    
-    <div class="row">
-        <div class="info-container">
-            <h1>Get in touch</h1>
-            <p>For more work inquiries, or just want to hangout? Send me over a message, and let's chat</p>
-            <div class="box-container">
-                <div class="box">
-                    <i class="fas fa-map"></i>
-                    <div class="info">
-                        <h3>Address :</h3>
-                        <p>New Haven,CT</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <i class="fas fa-envelope"></i>
-                    <div class="info">
-                        <h3>Email :</h3>
-                        <p>mainspacedesigns@gmail.com</p>
-                        <p>mainak.chak04@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-            <div class="share">
-                <a href="https://www.linkedin.com/in/mainakc98/" class="fab fa-linkedin"></a>
-                <a href="https://medium.com/@cmainak98" class="fab fa-medium"></a>
-                <a href="https://www.behance.net/cmainak98/projects" class="fa-brands fa-behance"></a>
-                <a href="https://www.instagram.com/mstudiodesignss/" class="fab fa-instagram"></a>
-            </div>
+     <!-- UX Study Sequence -->
+     <section class="case-section" id="uxstudysequence">
+        <div class="section-header">
+            <h2>UX Case Study Sequence</h2>
+
         </div>
-    
-        <!-- Contact Form -->
-        <form action="https://formsubmit.co/mainak.chak04@gmail.com" method="POST">
-            <div class="inputBox">
-                <!-- Name field -->
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="number" name="number" placeholder="Your Number" required>
-            </div>
-            <!-- Email field -->
-            <div class="inputBox">
-                <input type="email" name="email" placeholder="Your Email" required>
-                <input type="text" name="subject" placeholder="Your Subject" required>
-            </div>
-            <!-- Message field -->
-            <textarea name="message" placeholder="Your Message" cols="30" rows="10" required></textarea>
-            <!-- Security field to disable CAPTCHA -->
-            <input type="hidden" name="_captcha" value="false">
-            <!-- Redirect to a thank-you page -->
-            <input type="hidden" name="_next" value="https://mainakchakraborty.netlify.app//thank-you.html">
-            <!-- Submit button -->
-            <input type="submit" value="Send Message" class="btn">
-        </form>
-        <!-- Contact Form Ends -->
+
+        <div class="image-section">
+            <img src="CaseStudies/Images/Slide 2.png" alt="UX Process Flow" class="case-image">
+            <div class="image-caption">User journey mapping and design process visualization</div>
+        </div>
+    </section>
+
+
+    <!-- Project Overview -->
+    <section class="case-section" id="overview">
+        <div class="section-header">
+            <h2>Project Overview</h2>
+            <p>OrbitScan is a mobile app that helps
+                consumers make informed choices about
+                the products they buy, particularly in the
+                food category.
+                It allows users to scan barcodes of products to
+                receive a detailed analysis of their ingredients,
+                nutritional value, and potential health impacts
+                by simplifying complex information and giving
+                practical health scores and recommendations,
+                Orbit Scan empowers users to make healthier
+                and more informed decisions.</p>
+        </div>
         
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/mstudiodesignss/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-            <!-- Instagram embed code remains unchanged -->
-        </blockquote>
-        <script async src="//www.instagram.com/embed.js"></script>
-    </div>
-</section>
+    </section>
 
-    <!-- Footer Section -->
-    <footer>
+     <!-- Problem Statement -->
+     <section class="case-section" id="overview">
+        <div class="section-header">
+            <h2>Problem Statement</h2>
+            <p>Product labels and ingredient
+                lists are complex and
+                time-consuming to understand,
+                making it difficult to make
+                quick, informed choices while
+                shopping.
+                There's a fundamental gap in
+                nutrition and label literacy,
+                preventing consumers from
+                building long-term knowledge
+                about the foods they consume.</p>
+        </div>
+        <div class="image-section">
+            <img src="CaseStudies/Images/FISH BONE.png" alt="UX Process Flow" class="case-image">
+            <div class="image-caption">User journey mapping and design process visualization</div>
+        </div>
         
-            <div class="footer-bottom">
-                <span class="footer-name">Mainak Chakraborty</span>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="#"><i class="fas fa-balance-scale"></i> Balance</a>
-                    <a href="#"><i class="fab fa-dribbble"></i> Dribbble</a>
-                </div>
+        
+    </section>
+
+
+   
+    <!-- Research & Discovery -->
+    <section class="case-section" id="research">
+        <div class="section-header">
+            <h2>Research & Discovery</h2>
+            <p>Exploring the 5 W's</p>
+        </div>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-number">1</div>
+                <h4>WHO</h4>
+                    <ul>
+                        <p>Target Audience</p>
+                        <p>Level of Impact</p>
+                    </ul>
+            </div>
+            <div class="process-step">
+                <div class="process-number">2</div>
+                <h4>WHAT</h4>
+                <p>Defining the Problem Precisely</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">3</div>
+                <h4>WHEN</h4>
+                <p>Problem Occurrence Timeline</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">4</div>
+                <h4>WHERE</h4>
+                <p>Context Analysis</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">5</div>
+                <h4>WHY</h4>
+                <p>Impact Analysis</p>
             </div>
         </div>
-    </footer>
+
+        <div class="image-section">
+            <p></p>
+            <br>
+            <img src="CaseStudies/Images/TG.png" alt="UX Process Flow" class="case-image">
+            <div class="image-caption">WHO Target Audience Spectrum (Primary)</div>
+        </div>
+        <div class="image-section">
+            <p></p>
+            <br>
+            <img src="CaseStudies/Images/Who Impact Assesment.png" alt="UX Process Flow" class="case-image">
+            <div class="image-caption">WHO: Level of Impact</div>
+        </div>
+        <div class="image-section">
+            <p></p>
+            <br>
+            <img src="CaseStudies/Images/WHAT.png" alt="UX Process Flow" class="case-image">
+            <div class="image-caption">WHAT: Defining the Problem Precisely</div>
+        </div>
+        <div class="image-section">
+            <p></p>
+            <br>
+            <img src="CaseStudies/Images/WHEN.png" alt="UX Process Flow" class="case-image">
+            <div class="image-caption">WHEN: Problem Occurrence Timeline</div>
+        </div>
+        <div class="image-section">
+            <p></p>
+            <br>
+            <img src="CaseStudies/Images/WHERE.png" alt="UX Process Flow" class="case-image">
+            <div class="image-caption">WHERE: Context Analysis</div>
+        </div>
+        <div class="image-section">
+            <p></p>
+            <br>
+            <img src="CaseStudies/Images/WHY.png" alt="UX Process Flow" class="case-image">
+            <div class="image-caption">WHY: Impact Analysis</div>
+        </div>
+    </section>
+
+    <!-- Research Significance -->
+    <section class="case-section" id="overview">
+        <div class="section-header">
+            <h2>Research Significance</h2>
+            <p>This study aims to develop an app
+                that addresses a critical gap in
+                consumer knowledge,
+                empowering users to make
+                healthier and more sustainable
+                choices. By providing personalized
+                recommendations, the app will
+                enhance consumer awareness and
+                promote healthier lifestyles,
+                ultimately contributing to public
+                health and environmental
+                sustainability.</p>
+                <br>
+                <img src="CaseStudies/Images/Significance of the study.png" alt="UX Process Flow" class="case-image">
+        </div>
+        
+    </section>
+
+    <!-- Design Process -->
+    <section class="case-section" id="design">
+        <div class="section-header">
+            <h2>Design Process</h2>
+            <p>Iterative approach to solving complex problems</p>
+        </div>
+
+        <div class="design-showcase">
+            <img src="wireframes.jpg" alt="Wireframes" class="design-image">
+            <img src="prototype.jpg" alt="Prototype" class="design-image">
+            <img src="user-testing.jpg" alt="User Testing" class="design-image">
+        </div>
+    </section>
+
+    <!-- Outcome & Results -->
+    <section class="case-section" id="outcome">
+        <div class="section-header">
+            <h2>Impact & Results</h2>
+            <p>Measurable success through user-centered design</p>
+        </div>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h4>50% Faster</h4>
+                <p>Reduction in content scheduling time</p>
+            </div>
+            <div class="insight-card">
+                <h4>90% Satisfaction</h4>
+                <p>User satisfaction with new analytics dashboard</p>
+            </div>
+            <div class="insight-card">
+                <h4>40% Increase</h4>
+                <p>In cross-platform posting frequency</p>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // Slider Interaction
-        const sliderTrack = document.querySelector('.slider-track');
-        
-        sliderTrack.addEventListener('mouseenter', () => {
-            sliderTrack.style.animationPlayState = 'paused';
+        // Smooth scroll and section tracking
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
 
-        sliderTrack.addEventListener('mouseleave', () => {
-            sliderTrack.style.animationPlayState = 'running';
+        // Update active navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.case-section');
+            const navLinks = document.querySelectorAll('.case-nav a');
+            
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    navLinks[index].classList.add('active');
+                }
+            });
         });
     </script>
 </body>

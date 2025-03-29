@@ -82,6 +82,20 @@
         }
 
         /* Hero Section */
+
+        .brand-logo {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        z-index: 100;
+        max-width: 100px;
+        margin-bottom: 30px;
+    }
+
+    .brand-logo img {
+        width: 100%;
+        height: auto;
+    }
         .case-hero {
             padding: 120px 0 60px;
             background: var(--primary);
@@ -97,7 +111,7 @@
         .project-meta {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            gap: 260px;
             margin-top: 40px;
             padding: 20px;
             background: rgba(255,255,255,0.1);
@@ -211,6 +225,10 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .brand-logo {
+            max-width: 80px;
+            top: 20px;
+        }
             .case-nav {
                 display: none;
             }
@@ -252,7 +270,11 @@
     <!-- Hero Section -->
     <section class="case-hero">
         <div class="hero-content">
-            <h1>A Complete Solution for Smarter, Healthier Product Choices</h1>
+            <div class="brand-logo" style="left: 30px; transform: none;">
+                <img src="CaseStudies/Images/Logo.png" alt="Brand Logo">
+            </div>
+            <h1>ORBIT SCAN</h1>
+            <p>A Complete Solution for Smarter, Healthier Product Choices</p>
             <div class="project-meta">
                 <div>
                     <h4>Role</h4>
@@ -409,7 +431,7 @@
     <section class="case-section" id="overview">
         <div class="section-header">
             <h2>Research Significance</h2>
-            <p>This study aims to develop an app
+            <p>This research aims to develop an app
                 that addresses a critical gap in
                 consumer knowledge,
                 empowering users to make

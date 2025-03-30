@@ -451,40 +451,7 @@ nav {
   margin-top: 20px;
 }
 
-.floating-element {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: float 6s ease-in-out infinite;
-  z-index: -1;
-}
 
-.floating-element:nth-child(1) {
-  width: 100px;
-  height: 100px;
-  background: #02437D;
-  top: 20px;
-  left: -50px;
-  animation-duration: 8s;
-}
-
-.floating-element:nth-child(2) {
-  width: 150px;
-  height: 150px;
-  background: #02437D;
-  top: 200px;
-  left: -100px;
-  animation-duration: 10s;
-}
-
-.floating-element:nth-child(3) {
-  width: 120px;
-  height: 120px;
-  background: #02437D;
-  top: 100px;
-  left: 200px;
-  animation-duration: 12s;
-}
 
 @keyframes float {
   0% {

@@ -93,7 +93,7 @@
   font-size: 50px;
   line-height: 38px;
   }
-  }
+}
   
   #hero .btn-get-started {
   font-family: "Chakra Petch", sans-serif;
@@ -451,87 +451,37 @@
   margin-top: 20px;
   }
   
-  .floating-element {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.6;
-  animation: float 6s ease-in-out infinite;
-  z-index: -1;
-  }
-  
-  .floating-element:nth-child(1) {
-  width: 100px;
-  height: 100px;
-  background: #02437D;
-  top: 20px;
-  left: -50px;
-  animation-duration: 8s;
-  }
-  
-  .floating-element:nth-child(2) {
-  width: 150px;
-  height: 150px;
-  background: #02437D;
-  top: 200px;
-  left: -100px;
-  animation-duration: 10s;
-  }
-  
-  .floating-element:nth-child(3) {
-  width: 120px;
-  height: 120px;
-  background: #02437D;
-  top: 100px;
-  left: 200px;
-  animation-duration: 12s;
-  }
-  
-  @keyframes float {
-  0% {
-  transform: translateY(0) translateX(0);
-  }
-  50% {
-  transform: translateY(-20px) translateX(20px);
-  }
-  100% {
-  transform: translateY(0) translateX(0);
-  }
-  }
-  
-  .home {
-  display: -webkit-box;
-  display: -ms-flexbox;
+
+/* Updated home section */
+.home {
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 4rem;
   min-height: calc(100vh - 6.5rem);
-  }
-  
-  .home .image {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 42rem;
+  justify-content: center; /* Add this for better centering */
+}
+
+.home .image {
   flex: 1 1 42rem;
   text-align: center;
   padding-top: 120px;
-  }
-  
-  .home .image img {
-  height: 50rem;
-  width: 50rem;
+  max-width: 100%; /* Prevent overflow */
+}
+
+.home .image img {
+  height: auto; /* Remove fixed height */
+  width: 100%; /* Make responsive */
+  max-width: 50rem; /* Prevent oversized images */
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  
-  .home .content {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 42rem;
+}
+
+.home .content {
   flex: 1 1 42rem;
-  }
-  
-  .home .content h3 {
+  padding: 2rem; /* Add padding for mobile spacing */
+}
+
+.home .content h3 {
   color: #aaa;
   font-size: 4rem;
   padding-bottom: .9rem;
@@ -551,6 +501,31 @@
   padding: 1rem 0;
   line-height: 2;
   }
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; /* Stack vertically */
+    padding: 5rem 2rem; /* Add mobile padding */
+  }
+  
+  .home .image {
+    padding-top: 60px; /* Reduce top spacing */
+    flex: 0 1 auto; /* Reset flex sizing */
+    order: 1; /* Make image appear first */
+  }
+
+  .home .content {
+    order: 2; /* Content comes after image */
+    text-align: center; /* Center mobile text */
+  }
+
+  .home .image img {
+    max-width: 35rem; /* Smaller image on mobile */
+  }
+}
+  
+  
   
   .aboutme {
   font-size: 3.5rem;
@@ -1747,6 +1722,8 @@
   }
   
   @media (max-width: 768px) {
+
+    
   .gallery-container {
   grid-template-columns: 1fr; /* 1 column on small screens */
   }
